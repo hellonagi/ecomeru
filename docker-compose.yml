@@ -1,0 +1,57 @@
+services:
+  db:
+    image: postgres:16
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    ports:
+      - '5432:5432'
+
+  back:
+    build:
+      context: ./back
+      dockerfile: Dockerfile.dev
+    command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -b '0.0.0.0'"
+    volumes:
+      - ./back:/rails
+      - gem_data:/usr/local/bundle
+    ports:
+      - '3000:3000'
+    depends_on:
+      - db
+    env_file:
+      - .env
+    environment:
+      NEXT_PUBLIC_API_URL: ${DISCORD_KEY}
+      RAILS_API_URL: ${DISCORD_SECRET}
+    user: '${UID_GID}'
+
+  front:
+    working_dir: /front
+    build:
+      context: ./front
+      dockerfile: Dockerfile
+    command: pnpm run dev
+    volumes:
+      - type: bind
+        source: ./front
+        target: /front
+      - type: volume
+        source: node_modules
+        target: /front/node_modules
+    ports:
+      - '3001:3000'
+    depends_on:
+      - back
+    environment:
+      NEXT_PUBLIC_API_URL: ${NEXT_PUBLIC_API_URL}
+      RAILS_API_URL: ${RAILS_API_URL}
+    user: '${UID_GID}'
+
+volumes:
+  db_data:
+  gem_data:
+  node_modules:

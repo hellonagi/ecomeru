@@ -1,0 +1,99 @@
+@startuml reviwe-app
+ skinparam linetype ortho
+ hide circle
+
+entity "users" {
+  * id : bigint <<PK>>
+  --
+  * provider : string
+  * uid : string
+  * name : varchar(32)
+  nickname : varchar(16)
+  image : varchar(255)
+  is_admin : boolean
+  username_created_at : datetime
+  username_updated_at : datetime
+}
+
+entity profiles {
+  * id : bigint <<PK>>
+  --
+  * user_id  : bigint <<FK>>
+  bio        : varchar(140)
+  youtube    : varchar(32)
+  twitch     : varchar(32)
+  twitter    : varchar(32)
+}
+
+entity devices {
+  * id : bigint <<PK>>
+  --
+  * name        : varchar(256)
+  caption       : varchar(2000)
+  manufacturer  : varchar(64)
+  price         : smallint
+  image         : varchar(256)
+  reviewAverage : smallint
+  reviewCount   : smallint
+  itemUrl       : varchar(256)
+}
+
+entity shops {
+  * id : bigint <<PK>>
+  --
+  * name  : varchar(128)
+  * code  : varchar(128)
+  * url   : varchar(256)
+}
+
+entity devices_shops {
+  * id : bigint <<PK>>
+  --
+  * device_id   : bigint <<FK>>
+  * shop_id  : bigint <<FK>>
+}
+
+
+entity reviews {
+  * id : bigint <<PK>>
+  --
+  * user_id    : bigint <<FK>>
+  * device_id  : bigint <<FK>>
+  description  : varchar(1000)
+  rating       : smallint
+  bought_date  : datetime
+}
+
+entity analysis {
+  * id : bigint <<PK>>
+  --
+  * device_id : bigint <<FK>>
+  summary     : varchar(500)
+  sentiment   : smallint
+  features    : varchar(256)
+}
+
+entity tags {
+  * id : bigint <<PK>>
+  --
+  * name : varchar(64)
+}
+
+entity devices_tags {
+  * id : bigint <<PK>>
+  --
+  * device_id   : bigint <<FK>>
+  * tag_id  : bigint <<FK>>
+}
+
+
+users ||--|| profiles
+users ||--o{ reviews
+devices ||--o{ reviews
+devices ||--|{ devices_shops
+shops ||--|{ devices_shops
+devices ||--o| analysis
+devices ||--o{ devices_tags
+tags ||--o{ devices_tags
+
+@enduml

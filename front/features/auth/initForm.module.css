@@ -1,0 +1,11 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+
+  &::before {
+    font-size: 1rem;
+    color: var(--mantine-color-gray-8);
+    content: 'https://review.com/users/';
+    margin-right: 8px;
+  }
+}

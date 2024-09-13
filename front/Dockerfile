@@ -1,0 +1,23 @@
+# Use the official Node.js image.
+FROM node:18-alpine
+
+# Set the working directory.
+WORKDIR /front
+
+# Copy the package.json and pnpm-lock.yaml files.
+COPY package.json pnpm-lock.yaml ./
+
+# Install pnpm.
+RUN npm install -g pnpm
+
+# Install dependencies.
+RUN pnpm install
+
+# Copy the rest of the application code.
+COPY . .
+
+# Expose port 3000.
+EXPOSE 3000
+
+# Start the application.
+CMD ["pnpm", "run", "dev"]
