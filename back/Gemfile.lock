@@ -100,9 +100,12 @@ GEM
       rails (>= 4.2.0, < 7.2)
     drb (2.2.1)
     erubi (1.13.0)
+    event_stream_parser (1.0.0)
     faraday (2.11.0)
       faraday-net_http (>= 2.0, < 3.4)
       logger
+    faraday-multipart (1.0.4)
+      multipart-post (~> 2)
     faraday-net_http (3.3.0)
       net-http
     globalid (1.2.1)
@@ -131,6 +134,7 @@ GEM
     msgpack (1.7.2)
     multi_xml (0.7.1)
       bigdecimal (~> 3.1)
+    multipart-post (2.4.1)
     mutex_m (0.2.0)
     net-http (0.4.1)
       uri
@@ -235,6 +239,10 @@ GEM
     responders (3.1.1)
       actionpack (>= 5.2)
       railties (>= 5.2)
+    ruby-openai (7.1.0)
+      event_stream_parser (>= 0.3.0, < 2.0.0)
+      faraday (>= 1)
+      faraday-multipart (>= 1)
     sidekiq (7.3.2)
       concurrent-ruby (< 2)
       connection_pool (>= 2.3.0)
@@ -275,12 +283,14 @@ DEPENDENCIES
   bootsnap
   debug
   devise_token_auth
+  nokogiri
   omniauth-discord
   omniauth-rails_csrf_protection
   pg (~> 1.1)
   puma (>= 5.0)
   rack-cors
   rails (~> 7.1.4)
+  ruby-openai
   sidekiq
   sidekiq-throttled
   tzinfo-data

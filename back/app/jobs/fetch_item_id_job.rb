@@ -8,10 +8,24 @@ class FetchItemIdJob
     response = Net::HTTP.get(URI(url))
 
     itemid = extract_itemid(response)
-    if itemid
-      FetchRakutenItemJob.perform_async(itemid, slug)
+    unless itemid
+      puts 'itemIdが取得できませんでした'
+      nil
+    end
+
+    doc = Nokogiri::HTML(response)
+
+    element = doc.at_css('[data-id]')
+    if element
+      review_slug = element['data-id']
+      if review_slug
+        puts review_slug
+        FetchRakutenItemJob.perform_async(itemid, review_slug, slug)
+      else
+        puts 'review_slugが取得できませんでした'
+      end
     else
-      puts 'itemid が取得できませんでした'
+      puts 'data-id属性を持つ要素が見つかりませんでした'
     end
   end
 

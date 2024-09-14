@@ -8,7 +8,7 @@ class FetchRakutenItemJob
   # 1秒に1つのリクエストのみ許可
   sidekiq_throttle(concurrency: { limit: 1 }, threshold: { limit: 1, period: 1.second })
 
-  def perform(itemid, slug)
+  def perform(itemid, review_slug, slug)
     application_id = ENV['RAKUTEN_ID']
     affiliate_id = ENV['RAKUTEN_AFFILIATE']
 
@@ -42,12 +42,12 @@ class FetchRakutenItemJob
           slug: slug,
           code: item_data['itemCode'],
           catchcopy: item_data['catchcopy'],
-          manufacturer: item_data['shopName'],
           price: item_data['itemPrice'],
           image: item_data['mediumImageUrls'][0]['imageUrl'], # 複数の画像がある場合は1つ目を選択
           review_average: item_data['reviewAverage'],
           review_count: item_data['reviewCount'],
-          item_url: item_data['itemUrl']
+          item_url: item_data['itemUrl'],
+          review_slug: review_slug
         )
 
         if product.save
@@ -65,6 +65,8 @@ class FetchRakutenItemJob
             # 中間テーブルへのリレーションを作成
             product.shops << shop unless product.shops.include?(shop)
             puts 'products_shopsにデータが追加されました。'
+
+            AnalyzeReviewsJob.perform_async(review_slug, product.id)
           else
             puts shop.errors.full_messages
           end

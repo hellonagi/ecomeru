@@ -10,9 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_09_14_065721) do
+ActiveRecord::Schema[7.1].define(version: 2024_09_14_084128) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "analyses", force: :cascade do |t|
+    t.bigint "product_id", null: false
+    t.float "positive"
+    t.float "neutral"
+    t.float "negative"
+    t.string "summary", limit: 400, null: false
+    t.string "sum_positive", limit: 400, null: false
+    t.string "sum_negative", limit: 400, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["product_id"], name: "index_analyses_on_product_id"
+  end
 
   create_table "product_shops", force: :cascade do |t|
     t.bigint "product_id", null: false
@@ -29,12 +42,12 @@ ActiveRecord::Schema[7.1].define(version: 2024_09_14_065721) do
     t.string "slug", limit: 128, null: false
     t.string "code", limit: 128, null: false
     t.string "catchcopy", limit: 256
-    t.string "manufacturer", limit: 64
     t.integer "price"
     t.string "image", limit: 256
     t.float "review_average"
     t.integer "review_count"
     t.string "item_url", limit: 256
+    t.string "review_slug", limit: 256
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["slug"], name: "index_products_on_slug", unique: true
@@ -95,6 +108,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_09_14_065721) do
     t.index ["username"], name: "index_users_on_username", unique: true
   end
 
+  add_foreign_key "analyses", "products"
   add_foreign_key "product_shops", "products"
   add_foreign_key "product_shops", "shops"
   add_foreign_key "profiles", "users"

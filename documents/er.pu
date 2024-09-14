@@ -32,12 +32,12 @@ entity products {
   * slug        : varchar(128)
   * code        : varchar(128)
   catchcopy     : varchar(256)
-  manufacturer  : varchar(64)
   price         : int
   image         : varchar(256)
   review_average: float
   review_count  : smallint
   item_url      : varchar(256)
+  review_slug   : varchar(256)
 }
 
 entity shops {
@@ -70,9 +70,12 @@ entity analysis {
   * id : bigint <<PK>>
   --
   * product_id : bigint <<FK>>
-  summary     : varchar(500)
-  sentiment   : smallint
-  features    : varchar(256)
+  positive    : smallint
+  neutral     : smallint
+  negative    : smallint
+  summary     : varchar(400)
+  sum_positive : varchar(400)
+  sum_negative : varchar(400)
 }
 
 entity tags {
