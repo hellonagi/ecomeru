@@ -1,4 +1,5 @@
 class Analysis < ApplicationRecord
+  validates :product_id, uniqueness: true
   validates :summary, length: { maximum: 400 }
   validates :sum_positive,  length: { maximum: 400 }
   validates :sum_negative,  length: { maximum: 400 }

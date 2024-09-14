@@ -1,7 +1,7 @@
 class CreateAnalyses < ActiveRecord::Migration[7.1]
   def change
     create_table :analyses do |t|
-      t.references :product, null: false, foreign_key: true
+      t.references :product, null: false, foreign_key: true, index: { unique: true }
       t.float :positive
       t.float :neutral
       t.float :negative
