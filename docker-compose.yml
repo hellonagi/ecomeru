@@ -51,6 +51,29 @@ services:
       RAILS_API_URL: ${RAILS_API_URL}
     user: '${UID_GID}'
 
+  sidekiq:
+    build:
+      context: ./back
+      dockerfile: Dockerfile.dev
+    command: bundle exec sidekiq
+    volumes:
+      - ./back:/rails
+    depends_on:
+      - redis
+      - back
+      - db
+    environment:
+      REDIS_URL: redis://redis:6379/0
+      RAKUTEN_ID: ${RAKUTEN_ID}
+      RAKUTEN_AFFILIATE: ${RAKUTEN_AFFILIATE}
+    env_file:
+      - .env
+
+  redis:
+    image: 'redis:latest'
+    ports:
+      - '6379:6379'
+
 volumes:
   db_data:
   gem_data:

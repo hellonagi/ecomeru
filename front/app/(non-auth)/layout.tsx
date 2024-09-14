@@ -1,5 +1,5 @@
 import { Container } from '@mantine/core'
 
 export default function Layout({ children }: { children: React.ReactNode }) {
-  return <Container size="xs">{children}</Container>
+  return <Container size="sm">{children}</Container>
 }

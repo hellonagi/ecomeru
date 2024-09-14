@@ -32,5 +32,6 @@ module Back
     config.middleware.use ActionDispatch::Cookies
     config.middleware.use ActionDispatch::Session::CookieStore, config.session_options
     config.action_controller.allow_forgery_protection = false
+    config.active_job.queue_adapter = :sidekiq
   end
 end

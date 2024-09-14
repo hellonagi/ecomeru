@@ -25,17 +25,19 @@ entity profiles {
   twitter    : varchar(32)
 }
 
-entity devices {
+entity products {
   * id : bigint <<PK>>
   --
   * name        : varchar(256)
-  caption       : varchar(2000)
+  * slug        : varchar(128)
+  * code        : varchar(128)
+  catchcopy     : varchar(256)
   manufacturer  : varchar(64)
-  price         : smallint
+  price         : int
   image         : varchar(256)
-  reviewAverage : smallint
-  reviewCount   : smallint
-  itemUrl       : varchar(256)
+  review_average: float
+  review_count  : smallint
+  item_url      : varchar(256)
 }
 
 entity shops {
@@ -46,10 +48,10 @@ entity shops {
   * url   : varchar(256)
 }
 
-entity devices_shops {
+entity products_shops {
   * id : bigint <<PK>>
   --
-  * device_id   : bigint <<FK>>
+  * product_id   : bigint <<FK>>
   * shop_id  : bigint <<FK>>
 }
 
@@ -58,7 +60,7 @@ entity reviews {
   * id : bigint <<PK>>
   --
   * user_id    : bigint <<FK>>
-  * device_id  : bigint <<FK>>
+  * product_id  : bigint <<FK>>
   description  : varchar(1000)
   rating       : smallint
   bought_date  : datetime
@@ -67,7 +69,7 @@ entity reviews {
 entity analysis {
   * id : bigint <<PK>>
   --
-  * device_id : bigint <<FK>>
+  * product_id : bigint <<FK>>
   summary     : varchar(500)
   sentiment   : smallint
   features    : varchar(256)
@@ -79,21 +81,21 @@ entity tags {
   * name : varchar(64)
 }
 
-entity devices_tags {
+entity products_tags {
   * id : bigint <<PK>>
   --
-  * device_id   : bigint <<FK>>
+  * product_id   : bigint <<FK>>
   * tag_id  : bigint <<FK>>
 }
 
 
 users ||--|| profiles
 users ||--o{ reviews
-devices ||--o{ reviews
-devices ||--|{ devices_shops
-shops ||--|{ devices_shops
-devices ||--o| analysis
-devices ||--o{ devices_tags
-tags ||--o{ devices_tags
+products ||--o{ reviews
+products ||--|{ products_shops
+shops ||--|{ products_shops
+products ||--o| analysis
+products ||--o{ products_tags
+tags ||--o{ products_tags
 
 @enduml

@@ -10,9 +10,35 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_09_07_154145) do
+ActiveRecord::Schema[7.1].define(version: 2024_09_14_065721) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "product_shops", force: :cascade do |t|
+    t.bigint "product_id", null: false
+    t.bigint "shop_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["product_id", "shop_id"], name: "index_product_shops_on_product_id_and_shop_id", unique: true
+    t.index ["product_id"], name: "index_product_shops_on_product_id"
+    t.index ["shop_id"], name: "index_product_shops_on_shop_id"
+  end
+
+  create_table "products", force: :cascade do |t|
+    t.string "name", limit: 256, null: false
+    t.string "slug", limit: 128, null: false
+    t.string "code", limit: 128, null: false
+    t.string "catchcopy", limit: 256
+    t.string "manufacturer", limit: 64
+    t.integer "price"
+    t.string "image", limit: 256
+    t.float "review_average"
+    t.integer "review_count"
+    t.string "item_url", limit: 256
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["slug"], name: "index_products_on_slug", unique: true
+  end
 
   create_table "profiles", force: :cascade do |t|
     t.bigint "user_id", null: false
@@ -23,6 +49,15 @@ ActiveRecord::Schema[7.1].define(version: 2024_09_07_154145) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_profiles_on_user_id", unique: true
+  end
+
+  create_table "shops", force: :cascade do |t|
+    t.string "name", limit: 128, null: false
+    t.string "code", limit: 128, null: false
+    t.string "url", limit: 256, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["code"], name: "index_shops_on_code", unique: true
   end
 
   create_table "users", force: :cascade do |t|
@@ -48,8 +83,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_09_07_154145) do
     t.string "image"
     t.string "email"
     t.boolean "is_admin", default: false
-    t.boolean "is_moderator", default: false
-    t.boolean "is_host", default: false
     t.datetime "username_created_at"
     t.datetime "username_updated_at"
     t.json "tokens"
@@ -62,5 +95,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_09_07_154145) do
     t.index ["username"], name: "index_users_on_username", unique: true
   end
 
+  add_foreign_key "product_shops", "products"
+  add_foreign_key "product_shops", "shops"
   add_foreign_key "profiles", "users"
 end

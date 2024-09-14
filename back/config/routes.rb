@@ -6,6 +6,8 @@ Rails.application.routes.draw do
       }
       resource :user, only: %i[update]
       resources :users, only: %i[show]
+
+      resources :products, only: %i[show create]
     end
   end
 end
