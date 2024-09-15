@@ -21,7 +21,6 @@ export async function validateURL(slug: string) {
     if (element) {
       const reviewSlug = element.getAttribute('data-id')
       if (reviewSlug) {
-        console.log(reviewSlug)
         return { itemid, reviewSlug }
       } else {
         console.log('review_slugが取得できませんでした')

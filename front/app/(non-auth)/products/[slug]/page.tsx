@@ -11,7 +11,6 @@ import { NoAnalysis } from '@/features/rakuten/NoAnalysis'
 export default async function Page({ params }: { params: { slug: string } }) {
   const slug = params.slug
   const product = await fetchProductFromDB(slug)
-  console.log(product)
 
   if (!product) {
     // review_slugが存在するなら有効なurl

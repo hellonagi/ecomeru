@@ -9,7 +9,7 @@ export function LoadingAnalysis() {
   useEffect(() => {
     const timer = setTimeout(() => {
       router.refresh()
-    }, 5000)
+    }, 3000)
 
     return () => clearTimeout(timer)
   }, [router])

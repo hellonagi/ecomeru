@@ -8,8 +8,6 @@ export async function fetchProductFromDB(slug: string) {
     })
 
     if (response.ok) {
-      console.log('found data')
-
       const data = await response.json()
       return data.product
     }

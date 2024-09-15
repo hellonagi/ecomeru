@@ -16,9 +16,6 @@ export async function middleware(request: NextRequest) {
 
   const data = await checkRoles(token.value, client.value, uid.value)
 
-  console.log('HIYo')
-  console.log(data)
-
   if (!data.is_validated) {
     return NextResponse.redirect(new URL('/', request.url))
   }

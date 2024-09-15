@@ -8,7 +8,7 @@ export function LoadingProduct({ message }: { message: string }) {
   useEffect(() => {
     const timer = setTimeout(() => {
       router.refresh()
-    }, 5000)
+    }, 3000)
 
     return () => clearTimeout(timer)
   }, [router])
