@@ -40,6 +40,7 @@ gem 'rack-cors'
 
 gem 'sidekiq'
 gem 'sidekiq-throttled'
+gem 'sidekiq-unique-jobs'
 
 gem 'nokogiri'
 

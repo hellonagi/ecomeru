@@ -5,6 +5,7 @@ class AnalyzeReviewsJob
   include Sidekiq::Throttled::Job
 
   sidekiq_throttle(concurrency: { limit: 1 }, threshold: { limit: 1, period: 1.second })
+  sidekiq_options unique: :until_executed
 
   def perform(review_slug, product_id)
     url = "https://review.rakuten.co.jp/item/1/#{review_slug}/"
@@ -25,12 +26,16 @@ class AnalyzeReviewsJob
       reviews << output
     end
 
+    if reviews.blank?
+      puts 'Reviewsの中身が空です。'
+      return
+    end
+
     template = <<~PROMPT
       各レビューは「---」で区切られ、一行目が評価(5点満点)で、2行目以降がレビュー本文です。レビューをポジティブ、ニュートラル、ネガティブに分類し、それぞれの割合を合計100%にしてください。
       positive + neutral + negative = 100
       また、全体的な要約、ポジティブな意見の要約、ネガティブな意見の要約をそれぞれ400文字以内で書いてください。
       要約には、"ポジティブ"、"ネガティブ"、"意見"、"レビュー"といった表現を含めないでください。直接内容に入ってください。
-      JSON形式でアウトプットしてください。
 
       アウトプット例:
       {

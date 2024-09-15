@@ -7,6 +7,7 @@ class FetchRakutenItemJob
 
   # 1秒に1つのリクエストのみ許可
   sidekiq_throttle(concurrency: { limit: 1 }, threshold: { limit: 1, period: 1.second })
+  sidekiq_options unique: :until_executed
 
   def perform(itemid, review_slug, slug)
     application_id = ENV['RAKUTEN_ID']
@@ -24,6 +25,11 @@ class FetchRakutenItemJob
       # GETリクエストを送信
       response = Net::HTTP.get(uri)
       data = JSON.parse(response)
+
+      if data['Items'].empty?
+        puts 'itemCodeが機能していません'
+        return
+      end
 
       # 必要に応じてデータを保存
       item_data = data['Items'][0]['Item']
