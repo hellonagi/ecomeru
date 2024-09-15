@@ -23,6 +23,10 @@ import LoginButton from '@/features/auth/LoginButton'
 import LogoutButton from '@/features/auth/LogoutButton'
 import classes from './Header.module.css'
 import { useAuth } from '@/features/auth/AuthContext'
+import { Inter } from 'next/font/google'
+import Link from 'next/link'
+
+const inter = Inter({ subsets: ['latin'] })
 
 const links = [
   { link: '/', label: 'Home' },
@@ -52,7 +56,15 @@ export default function Header() {
       <header className={classes.header}>
         <Group h="100%">
           <Flex flex={1} justify="start">
-            <Text>AIレビュー分析</Text>
+            <Text
+              component={Link}
+              href="/"
+              className={inter.className}
+              fw={600}
+              size="lg"
+            >
+              ecomeru
+            </Text>
           </Flex>
 
           <Group flex={1} justify="center" h="100%" gap={0} visibleFrom="sm">
@@ -88,7 +100,7 @@ export default function Header() {
                             size={28}
                           />
                           <Text fw={500} size="sm" lh={1} mr={3}>
-                          {currentUser.nickname || currentUser.name}
+                            {currentUser.nickname || currentUser.name}
                           </Text>
                           <IconChevronDown
                             style={{ width: rem(12), height: rem(12) }}

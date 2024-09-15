@@ -57,12 +57,12 @@ export function Features() {
 
   return (
     <Container size="lg" py="xl">
-      <Title order={2} className={classes.title} ta="center" mt="sm">
-        レビューを読むのがめんどくさい？
+      <Title order={2} size="h3" className={classes.title} ta="center" mt="sm">
+        ecomeruはECサイトのレビューをまとめます
       </Title>
 
       <Text c="dimmed" className={classes.description} ta="center" mt="md">
-        AI分析でレビューの要点だけを掴み、短時間で自分に合う商品を見つけよう。
+        「ecomeru」という名前は、「Ecommerce」と「まとめる」という言葉から生まれました。ECサイトでの商品選びを、手軽にしてくれるサービスです。もうレビューの山に埋もれる必要はありません。
       </Text>
 
       <SimpleGrid cols={{ base: 1, md: 3 }} spacing="xl" mt={50}>
