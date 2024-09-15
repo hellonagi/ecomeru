@@ -9,9 +9,9 @@ import { LoadingAnalysis } from '@/features/rakuten/LoadingAnalysis'
 import { NoAnalysis } from '@/features/rakuten/NoAnalysis'
 
 export default async function Page({ params }: { params: { slug: string } }) {
-  console.log('page', params.slug)
   const slug = params.slug
   const product = await fetchProductFromDB(slug)
+  console.log(product)
 
   if (!product) {
     // review_slugが存在するなら有効なurl
@@ -26,19 +26,25 @@ export default async function Page({ params }: { params: { slug: string } }) {
   }
 
   const shop = product.shops[0]
-  const analysis = product.analysis
   const review_url = `https://review.rakuten.co.jp/item/1/${product.review_slug}/`
+  const analysisComponent = await getAnalysisComponent(product)
 
   return (
     <>
-      {product && (
-        <Product product={product} shop={shop} review_url={review_url} />
-      )}
-      {product.review_count > 5 ? (
-        <>{analysis ? <Analysis analysis={analysis} /> : <LoadingAnalysis />}</>
-      ) : (
-        <NoAnalysis />
-      )}
+      <Product product={product} shop={shop} review_url={review_url} />
+      {analysisComponent}
     </>
   )
+}
+
+async function getAnalysisComponent(product: any) {
+  if (product.review_count > 5) {
+    return product.analysis ? (
+      <Analysis analysis={product.analysis} />
+    ) : (
+      <LoadingAnalysis />
+    )
+  } else {
+    return <NoAnalysis />
+  }
 }

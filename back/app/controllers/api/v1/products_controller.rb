@@ -1,17 +1,19 @@
 class Api::V1::ProductsController < ApplicationController
   def show
-    product = Product.includes(:shops).find_by(slug: params[:id])
-    if product
-      analysis = Analysis.find_by(product_id: product.id)
-      if analysis
-        render json: {
-          product: product.as_json(include: %i[shops analysis])
-        }
+    @product = Product.includes(%i[shops genres]).find_by(slug: params[:id])
+    if @product
+      @analysis = Analysis.find_by(product_id: @product.id)
+      if @analysis
+        # render json: {
+        #   product: @product.as_json(include: %i[shops genres analysis])
+        # }
+        render :show 
       else
-        AnalyzeReviewsJob.perform_async(product.review_slug, product.id)
-        render json: {
-          product: product.as_json(include: :shops)
-        }
+        AnalyzeReviewsJob.perform_async(@product.review_slug, @product.id)
+        # render json: {
+        #   product: product.as_json(include: %i[shops genres])
+        # }
+        render :show 
       end
     else
       render json: { error: 'Product not found' }, status: :not_found

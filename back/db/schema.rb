@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_09_14_084128) do
+ActiveRecord::Schema[7.1].define(version: 2024_09_15_130043) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -25,6 +25,25 @@ ActiveRecord::Schema[7.1].define(version: 2024_09_14_084128) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["product_id"], name: "index_analyses_on_product_id", unique: true
+  end
+
+  create_table "genres", force: :cascade do |t|
+    t.string "name", limit: 64, null: false
+    t.integer "code", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["code"], name: "index_genres_on_code", unique: true
+  end
+
+  create_table "product_genres", force: :cascade do |t|
+    t.bigint "product_id", null: false
+    t.bigint "genre_id", null: false
+    t.integer "level", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["genre_id"], name: "index_product_genres_on_genre_id"
+    t.index ["product_id", "genre_id"], name: "index_product_genres_on_product_id_and_genre_id", unique: true
+    t.index ["product_id"], name: "index_product_genres_on_product_id"
   end
 
   create_table "product_shops", force: :cascade do |t|
@@ -109,6 +128,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_09_14_084128) do
   end
 
   add_foreign_key "analyses", "products"
+  add_foreign_key "product_genres", "genres"
+  add_foreign_key "product_genres", "products"
   add_foreign_key "product_shops", "products"
   add_foreign_key "product_shops", "shops"
   add_foreign_key "profiles", "users"

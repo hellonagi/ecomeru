@@ -1,6 +1,7 @@
 'use client'
 import {
   Anchor,
+  Badge,
   Grid,
   Text,
   Button,
@@ -9,6 +10,7 @@ import {
   Group,
   Stack,
   Rating,
+  Paper,
 } from '@mantine/core'
 import { IconExternalLink } from '@tabler/icons-react'
 import Image from 'next/image'
@@ -22,22 +24,31 @@ export function Product({ product, shop, review_url }: any) {
 
       <Grid mt={32}>
         <Grid.Col span={{ base: 12, xs: 4 }}>
-          <Image
-            src={product.image.replace('128x128', '384x384')}
-            width={256}
-            height={256}
-            sizes="100vw"
-            style={{
-              width: '100%',
-              height: 'auto',
-            }}
-            alt={product.code}
-          />
+          <Paper withBorder>
+            <Image
+              src={product.image.replace('128x128', '384x384')}
+              width={256}
+              height={256}
+              sizes="100vw"
+              style={{
+                width: '100%',
+                height: 'auto',
+              }}
+              alt={product.code}
+            />
+          </Paper>
         </Grid.Col>
         <Grid.Col span={{ base: 12, xs: 8 }}>
           <Stack justify="space-between" h="100%">
             <Stack justify="flex-start" gap={4}>
               <Text>{product.catchcopy}</Text>
+              <Group gap={8}>
+                {product.genres.map((genre: any) => (
+                  <Badge key={genre.name} color="gray" radius="xs">
+                    {genre.name}
+                  </Badge>
+                ))}
+              </Group>
               <Group gap={8}>
                 <Rating
                   size="md"

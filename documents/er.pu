@@ -48,7 +48,7 @@ entity shops {
   * url   : varchar(256)
 }
 
-entity products_shops {
+entity product_shops {
   * id : bigint <<PK>>
   --
   * product_id   : bigint <<FK>>
@@ -78,27 +78,29 @@ entity analysis {
   sum_negative : varchar(400)
 }
 
-entity tags {
+entity genres {
   * id : bigint <<PK>>
   --
-  * name : varchar(64)
+  * code : int
+  name : varchar(64)
 }
 
-entity products_tags {
+entity product_genres {
   * id : bigint <<PK>>
   --
   * product_id   : bigint <<FK>>
-  * tag_id  : bigint <<FK>>
+  * genre_id  : bigint <<FK>>
+  * level : smallint
 }
 
 
 users ||--|| profiles
 users ||--o{ reviews
 products ||--o{ reviews
-products ||--|{ products_shops
-shops ||--|{ products_shops
+products ||--|{ product_shops
+shops ||--|{ product_shops
 products ||--o| analysis
-products ||--o{ products_tags
-tags ||--o{ products_tags
+products ||--o{ product_genres
+genres ||--o{ product_genres
 
 @enduml

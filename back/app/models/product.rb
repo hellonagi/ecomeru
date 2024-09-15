@@ -13,4 +13,12 @@ class Product < ApplicationRecord
   has_many :product_shops
   has_many :shops, through: :product_shops
   has_one :analysis
+  has_many :product_genres
+  has_many :genres, through: :product_genres
+
+  def level_in_product_genres
+    product_genres.map do |pg|
+      { genre_id: pg.genre_id, level: pg.level }
+    end
+  end
 end
