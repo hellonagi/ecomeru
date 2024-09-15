@@ -6,10 +6,12 @@ import { Notifications } from '@mantine/notifications'
 import { AuthProvider } from '@/features/auth/AuthContext'
 import { theme } from '../theme'
 import Header from '@/components/header/Header'
+import { Footer } from '@/components/footer/Footer'
 
 export const metadata = {
   title: 'AIレビュー分析',
-  description: 'AIレビュー分析は、AI技術を活用してレビューを分析し、ポジティブ・ネガティブな意見を可視化するサービスです。',
+  description:
+    'AIレビュー分析は、AI技術を活用してレビューを分析し、ポジティブ・ネガティブな意見を可視化するサービスです。',
 }
 
 export default function RootLayout({ children }: { children: any }) {
@@ -28,6 +30,7 @@ export default function RootLayout({ children }: { children: any }) {
           <AuthProvider>
             <Header />
             {children}
+            <Footer />
           </AuthProvider>
           <Notifications />
         </MantineProvider>
