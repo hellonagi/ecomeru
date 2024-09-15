@@ -1,7 +1,7 @@
 import '@mantine/core/styles.css'
 import '@mantine/notifications/styles.css'
 import React from 'react'
-import { MantineProvider, ColorSchemeScript } from '@mantine/core'
+import { MantineProvider, ColorSchemeScript, Flex } from '@mantine/core'
 import { Notifications } from '@mantine/notifications'
 import { AuthProvider } from '@/features/auth/AuthContext'
 import { theme } from '../theme'
@@ -28,9 +28,11 @@ export default function RootLayout({ children }: { children: any }) {
       <body>
         <MantineProvider theme={theme}>
           <AuthProvider>
-            <Header />
-            {children}
-            <Footer />
+            <Flex direction="column" mih="100vh">
+              <Header />
+              {children}
+              <Footer />
+            </Flex>
           </AuthProvider>
           <Notifications />
         </MantineProvider>

@@ -6,6 +6,7 @@ import { Product } from '@/features/rakuten/Product'
 import { Analysis } from '@/features/rakuten/Analysis'
 import { LoadingProduct } from '@/features/rakuten/LoadingProduct'
 import { LoadingAnalysis } from '@/features/rakuten/LoadingAnalysis'
+import { NoAnalysis } from '@/features/rakuten/NoAnalysis'
 
 export default async function Page({ params }: { params: { slug: string } }) {
   console.log('page', params.slug)
@@ -33,7 +34,11 @@ export default async function Page({ params }: { params: { slug: string } }) {
       {product && (
         <Product product={product} shop={shop} review_url={review_url} />
       )}
-      {analysis ? <Analysis analysis={analysis} /> : <LoadingAnalysis />}
+      {product.review_count > 5 ? (
+        <>{analysis ? <Analysis analysis={analysis} /> : <LoadingAnalysis />}</>
+      ) : (
+        <NoAnalysis />
+      )}
     </>
   )
 }
