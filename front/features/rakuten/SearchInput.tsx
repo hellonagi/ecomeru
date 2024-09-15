@@ -25,7 +25,7 @@ export function SearchInput(props: TextInputProps) {
 
       if (match) {
         const result = match[1]
-        const slug = result.replace('/', '-')
+        const slug = result.replace('/', '_')
         router.push(`/products/${slug}`)
       } else {
         console.log('分析対象外のURLです。')

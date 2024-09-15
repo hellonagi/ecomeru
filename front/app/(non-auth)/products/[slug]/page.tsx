@@ -1,15 +1,27 @@
 import { notFound } from 'next/navigation'
-import { fetchProduct } from '@/features/rakuten/actions/fetch-product'
+import { fetchProductFromDB } from '@/features/rakuten/actions/fetch-product-from-db'
+import { validateURL } from '@/features/rakuten/actions/validate-url'
+import { createProduct } from '@/features/rakuten/actions/create-product'
 import { Product } from '@/features/rakuten/Product'
 import { Analysis } from '@/features/rakuten/Analysis'
+import { LoadingProduct } from '@/features/rakuten/LoadingProduct'
+import { LoadingAnalysis } from '@/features/rakuten/LoadingAnalysis'
 
 export default async function Page({ params }: { params: { slug: string } }) {
   console.log('page', params.slug)
   const slug = params.slug
-  const product = await fetchProduct(slug)
+  const product = await fetchProductFromDB(slug)
 
   if (!product) {
-    notFound()
+    // review_slugが存在するなら有効なurl
+    const data = await validateURL(slug)
+
+    if (data?.itemid && data.reviewSlug) {
+      const message = await createProduct(data.itemid, data.reviewSlug, slug)
+      return <LoadingProduct message={message} />
+    } else {
+      notFound()
+    }
   }
 
   const shop = product.shops[0]
@@ -18,8 +30,10 @@ export default async function Page({ params }: { params: { slug: string } }) {
 
   return (
     <>
-      {product && <Product product={product} shop={shop} review_url={review_url} />}
-      {analysis && <Analysis analysis={analysis} />}
+      {product && (
+        <Product product={product} shop={shop} review_url={review_url} />
+      )}
+      {analysis ? <Analysis analysis={analysis} /> : <LoadingAnalysis />}
     </>
   )
 }

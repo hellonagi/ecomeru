@@ -24,7 +24,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_09_14_084128) do
     t.string "sum_negative", limit: 400, null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["product_id"], name: "index_analyses_on_product_id"
+    t.index ["product_id"], name: "index_analyses_on_product_id", unique: true
   end
 
   create_table "product_shops", force: :cascade do |t|

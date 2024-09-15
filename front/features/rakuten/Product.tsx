@@ -2,7 +2,6 @@
 import {
   Anchor,
   Grid,
-  Flex,
   Text,
   Button,
   Title,
@@ -10,17 +9,8 @@ import {
   Group,
   Stack,
   Rating,
-  Tabs,
-  rem,
 } from '@mantine/core'
-import {
-  IconPhoto,
-  IconExternalLink,
-  IconMessageCircle,
-  IconSettings,
-  IconBrandTwitter,
-  IconBrandDiscord,
-} from '@tabler/icons-react'
+import { IconExternalLink } from '@tabler/icons-react'
 import Image from 'next/image'
 
 export function Product({ product, shop, review_url }: any) {

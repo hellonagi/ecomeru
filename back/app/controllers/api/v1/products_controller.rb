@@ -19,17 +19,11 @@ class Api::V1::ProductsController < ApplicationController
   end
 
   def create
-    url = user_params[:url]
+    itemid = user_params[:itemid]
+    review_slug = user_params[:review_slug]
     slug = user_params[:slug]
 
-    # URLが'item.rakuten.co.jp'かどうかチェック
-    unless valid_rakuten_url?(url)
-      render json: { error: 'Invalid URL. Only item.rakuten.co.jp is allowed.' }, status: :unprocessable_entity
-      return
-    end
-
-    # Sidekiqジョブにリクエストをキューに入れる
-    FetchItemIdJob.perform_async(url, slug)
+    FetchRakutenItemJob.perform_async(itemid, review_slug, slug)
 
     render json: { message: 'Request received. Processing in the background.' }
   end
@@ -37,7 +31,7 @@ class Api::V1::ProductsController < ApplicationController
   private
 
   def user_params
-    params.require(:product).permit(:url, :slug)
+    params.require(:product).permit(:itemid, :review_slug, :slug)
   end
 
   def valid_rakuten_url?(url)
