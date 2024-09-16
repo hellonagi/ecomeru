@@ -1,0 +1,74 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:16
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    ports:
+      - '5432:5432'
+    restart: always
+
+  back:
+    build:
+      context: ./back
+      dockerfile: Dockerfile.prod
+    command: bash -c "rm -f tmp/pids/server.pid && bundle exec rails s -e production -b '0.0.0.0'"
+    volumes:
+      - gem_data:/usr/local/bundle
+    ports:
+      - '3000:3000'
+    depends_on:
+      - db
+    env_file:
+      - .env
+    environment:
+      RAILS_ENV: production
+      RAILS_LOG_TO_STDOUT: 'true' # 本番環境でのログ設定
+      NEXT_PUBLIC_API_URL: ${NEXT_PUBLIC_API_URL}
+      RAILS_API_URL: ${RAILS_API_URL}
+    restart: always
+
+  front:
+    build:
+      context: ./front
+      dockerfile: Dockerfile.prod
+    command: pnpm run build && pnpm start
+    ports:
+      - '3001:3000'
+    depends_on:
+      - back
+    environment:
+      NEXT_PUBLIC_API_URL: ${NEXT_PUBLIC_API_URL}
+      RAILS_API_URL: ${RAILS_API_URL}
+    restart: always
+
+  sidekiq:
+    build:
+      context: ./back
+      dockerfile: Dockerfile.prod
+    command: bundle exec sidekiq
+    volumes:
+      - gem_data:/usr/local/bundle
+    depends_on:
+      - redis
+      - back
+      - db
+    environment:
+      RAILS_ENV: production
+      REDIS_URL: redis://redis:6379/0
+    restart: always
+
+  redis:
+    image: 'redis:latest'
+    ports:
+      - '6379:6379'
+    restart: always
+
+volumes:
+  db_data:
+  gem_data:
