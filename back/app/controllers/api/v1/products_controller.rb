@@ -20,6 +20,13 @@ class Api::V1::ProductsController < ApplicationController
     render json: { message: 'Request received. Processing in the background.' }
   end
 
+  def recent
+    @products = Product.includes(%i[shops analysis])
+                       .where(analyses: { id: Analysis.order(updated_at: :desc)
+                      .limit(9).pluck(:id) })
+    render :recent
+  end
+
   private
 
   def user_params

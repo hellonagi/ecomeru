@@ -1,13 +1,4 @@
-import {
-  Badge,
-  Group,
-  Title,
-  Text,
-  Card,
-  SimpleGrid,
-  Container,
-  rem,
-} from '@mantine/core'
+import { Title, Text, Card, SimpleGrid, rem } from '@mantine/core'
 import { IconAnalyze, IconStars, IconUser } from '@tabler/icons-react'
 import classes from './Features.module.css'
 
@@ -56,7 +47,7 @@ export function Features() {
   ))
 
   return (
-    <Container size="lg" py="xl">
+    <>
       <Title order={2} size="h3" className={classes.title} ta="center" mt="sm">
         ecomeruはECサイトのレビューをまとめます
       </Title>
@@ -68,6 +59,6 @@ export function Features() {
       <SimpleGrid cols={{ base: 1, md: 3 }} spacing="xl" mt={50}>
         {features}
       </SimpleGrid>
-    </Container>
+    </>
   )
 }

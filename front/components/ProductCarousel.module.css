@@ -1,0 +1,11 @@
+.control {
+  background-color: rgba(34, 139, 230, 0.2);
+}
+
+.indicator {
+  background-color: rgba(34, 139, 230, 0.5);
+
+  &[data-active] {
+    background-color: rgba(34, 139, 230, 1);
+  }
+}

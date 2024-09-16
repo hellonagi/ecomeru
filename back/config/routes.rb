@@ -7,6 +7,7 @@ Rails.application.routes.draw do
       resource :user, only: %i[update]
       resources :users, only: %i[show]
 
+      get '/products/recent', to: 'products#recent', as: 'recent'
       resources :products, only: %i[show create]
     end
   end
