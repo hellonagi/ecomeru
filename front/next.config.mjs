@@ -16,6 +16,8 @@ export default withBundleAnalyzer({
     domains: ['thumbnail.image.rakuten.co.jp'],
   },
   env: {
-    RAILS_API_URL: process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000',
+    RAILS_API_URL: 'http://back:3000',
+    BASE_URL_PRO: 'https://ecomeru.com',
+    BASE_URL_DEV: 'https://localhost:80',
   },
 })

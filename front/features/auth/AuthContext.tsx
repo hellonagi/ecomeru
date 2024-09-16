@@ -20,8 +20,6 @@ interface AuthContextValue {
   logout: () => void
 }
 
-const baseUrl = process.env.NEXT_PUBLIC_API_URL
-
 const AuthContext = createContext<AuthContextValue | undefined>(undefined)
 
 export const AuthProvider = ({ children }: { children: ReactNode }) => {
@@ -29,6 +27,10 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
   const [loading, setLoading] = useState<boolean>(true)
   const [openAuthWindow, setOpenAuthWindow] = useState<Window | null>(null)
   const router = useRouter()
+  const baseUrl =
+    process.env.NODE_ENV == 'production'
+      ? process.env.BASE_URL_PRO
+      : process.env.BASE_URL_DEV
 
   useEffect(() => {
     const accessToken = Cookies.get('access-token')
