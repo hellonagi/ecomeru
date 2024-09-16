@@ -8,7 +8,7 @@ export async function RecentProducts() {
   return (
     <>
       <Title order={2} size="h3" mt={64}>
-        最近レビューが分析された商品
+        最近レビュー分析された商品
       </Title>
       <ProductCarousel products={products} />
     </>

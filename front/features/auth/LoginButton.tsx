@@ -15,7 +15,7 @@ export default function LoginButton() {
       leftSection={<IconBrandDiscord size={18} />}
       variant="default"
     >
-      Login
+      ログイン
     </Button>
   )
 }

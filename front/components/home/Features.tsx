@@ -53,7 +53,7 @@ export function Features() {
       </Title>
 
       <Text c="dimmed" className={classes.description} ta="center" mt="md">
-        「ecomeru」という名前は、「Ecommerce」と「まとめる」という言葉から生まれました。ECサイトでの商品選びを、手軽にしてくれるサービスです。もうレビューの山に埋もれる必要はありません。
+        「ecomeru」というサービス名は、「Ecommerce」と「まとめる」という言葉から生まれました。ECサイトでの商品選びを、手軽にしてくれるサービスです。もうレビューの山に埋もれる必要はありません。
       </Text>
 
       <SimpleGrid cols={{ base: 1, md: 3 }} spacing="xl" mt={50}>

@@ -10,7 +10,7 @@ export default function LogoutButton() {
 
   return (
     <Button onClick={handleLogout} variant="default">
-      Logout
+      ログアウト
     </Button>
   )
 }
