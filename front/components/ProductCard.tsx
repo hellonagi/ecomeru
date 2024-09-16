@@ -7,8 +7,8 @@ import {
   Group,
   Stack,
   RingProgress,
+  Image,
 } from '@mantine/core'
-import Image from 'next/image'
 import classes from './ProductCard.module.css'
 
 export function ProductCard({ product }: any) {
@@ -20,12 +20,19 @@ export function ProductCard({ product }: any) {
       component={Link}
       href={`/products/${product.slug}`}
     >
-      <Card.Section h={230} style={{ overflow: 'hidden' }} ta="center">
+      <Card.Section
+        h={230}
+        style={{
+          overflow: 'hidden',
+          display: 'flex',
+          justifyContent: 'center',
+        }}
+        ta="center"
+      >
         <Image
           src={product.image.replace('128x128', '256x256')}
           alt={product.code}
-          height={230}
-          width={230}
+          p="md"
         />
       </Card.Section>
 

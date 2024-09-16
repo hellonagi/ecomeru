@@ -11,9 +11,9 @@ import {
   Stack,
   Rating,
   Paper,
+  Image
 } from '@mantine/core'
 import { IconExternalLink } from '@tabler/icons-react'
-import Image from 'next/image'
 
 export function Product({ product, shop, review_url }: any) {
   return (
