@@ -40,16 +40,16 @@ export default function Header() {
   const [userMenuOpened, setUserMenuOpened] = useState(false)
   const { loading, currentUser, logout } = useAuth()
 
-  const items = links.map((link) => (
-    <a
-      key={link.label}
-      href={link.link}
-      className={classes.link}
-      onClick={(event) => event.preventDefault()}
-    >
-      {link.label}
-    </a>
-  ))
+  // const items = links.map((link) => (
+  //   <a
+  //     key={link.label}
+  //     href={link.link}
+  //     className={classes.link}
+  //     onClick={(event) => event.preventDefault()}
+  //   >
+  //     {link.label}
+  //   </a>
+  // ))
 
   return (
     <>
@@ -67,9 +67,9 @@ export default function Header() {
             </Text>
           </Flex>
 
-          <Group flex={1} justify="center" h="100%" gap={0} visibleFrom="sm">
+          {/* <Group flex={1} justify="center" h="100%" gap={0} visibleFrom="sm">
             {items}
-          </Group>
+          </Group> */}
           <Group flex={1} justify="end" visibleFrom="sm">
             {loading ? (
               <>
@@ -158,10 +158,10 @@ export default function Header() {
           zIndex={1000000}
         >
           <ScrollArea h={`calc(100vh - ${rem(80)})`} mx="-md">
-            <Divider my="sm" />
+            {/* <Divider my="sm" />
 
             {items}
-            <Divider my="sm" />
+            <Divider my="sm" /> */}
 
             <Group justify="center" grow pb="xl" px="md">
               {currentUser ? <LogoutButton /> : <LoginButton />}

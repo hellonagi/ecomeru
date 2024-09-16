@@ -42,9 +42,6 @@ class Api::V1::UsersController < ApplicationController
     {
       nickname: user.nickname,
       image: user.image,
-      country: profile.country&.name,
-      machine: profile.machine&.name,
-      controller: profile.controller&.name,
       bio: profile.bio,
       youtube: profile.youtube,
       twitch: profile.twitch,

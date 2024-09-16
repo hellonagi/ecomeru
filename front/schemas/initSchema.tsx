@@ -4,15 +4,12 @@ export const schema = z.object({
   username: z
     .string()
     .trim()
-    .regex(
-      /^[a-z0-9_]+$/,
-      'Only lowercase letters, numbers, and underscores are allowed.',
-    )
-    .min(1, 'Must be at least 1 character long.')
-    .max(16, 'Must be at most 16 characters long.'),
+    .regex(/^[a-z0-9_]+$/, '英小文字、数字、アンダーバーのみ使用できます。')
+    .min(1, '1文字以上でなければなりません。')
+    .max(16, '16文字以下でなければなりません。'),
   nickname: z
     .string()
     .trim()
-    .min(1, 'Must be at least 1 character long.')
-    .max(10, 'Must be at most 10 characters long.'),
+    .min(1, '1文字以上でなければなりません。')
+    .max(10, '10文字以下でなければなりません。'),
 })

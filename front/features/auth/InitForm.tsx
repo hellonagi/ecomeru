@@ -64,8 +64,8 @@ export default function InitForm({
   return (
     <form ref={formRef} onSubmit={handleFormSubmit}>
       <TextInput
-        label="Username"
-        description="Your username can be changed once every 30 days."
+        label="ユーザー名"
+        description="ユーザー名は30日に1回変更できます。"
         placeholder="username"
         withAsterisk
         variant="filled"
@@ -75,8 +75,8 @@ export default function InitForm({
       />
       <TextInput
         mt="md"
-        label="in-Game Name"
-        placeholder="Name"
+        label="ニックネーム"
+        placeholder="ニックネーム"
         variant="filled"
         error={errors.nickname?.message}
         {...register('nickname')}
@@ -89,7 +89,7 @@ export default function InitForm({
           aria-disabled={isSubmitting || !isDirty || !isValid}
           disabled={isSubmitting || !isDirty || !isValid}
         >
-          Submit
+          送信
         </Button>
       </Group>
     </form>
