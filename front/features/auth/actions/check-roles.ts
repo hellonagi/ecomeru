@@ -3,7 +3,7 @@
 export async function checkRoles(token: string, client: string, uid: string) {
   try {
     const response = await fetch(
-      'http://back:3000/api/v1/auth/validate_token',
+      `${process.env.RAILS_API_URL}/api/v1/auth/validate_token`,
       {
         method: 'GET',
         headers: {

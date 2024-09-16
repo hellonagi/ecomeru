@@ -6,7 +6,7 @@ export async function createProduct(
   slug: string,
 ) {
   try {
-    const res = await fetch(`http://back:3000/api/v1/products`, {
+    const res = await fetch(`${process.env.RAILS_API_URL}/api/v1/products`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -18,14 +18,14 @@ export async function createProduct(
           slug: slug,
         },
       }),
-      cache: 'no-store',
+      next: { revalidate: 0 },
     })
 
     if (res.ok) {
       return '現在商品データを取得しています。しばらくお待ち下さい。'
     }
   } catch (error) {
-    console.log('ERR')
+    console.log('ERR1')
     console.error(error)
   }
   return 'データの取得に失敗しました。時間をおいてから再度お試しください。'

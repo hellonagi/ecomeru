@@ -20,7 +20,7 @@ interface AuthContextValue {
   logout: () => void
 }
 
-const url = 'http://localhost:3000'
+const baseUrl = process.env.NEXT_PUBLIC_API_URL
 
 const AuthContext = createContext<AuthContextValue | undefined>(undefined)
 
@@ -59,7 +59,13 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
 
   useEffect(() => {
     const handleMessage = (event: MessageEvent) => {
-      if (event.origin !== url) return
+      if (process.env.NODE_ENV == 'production') {
+        if (event.origin !== baseUrl) return
+      } else {
+        if (`${event.origin}:80` !== baseUrl) return
+      }
+      console.log('a')
+
       const data = event.data as DiscordUser
 
       clearInterval(timer)
@@ -92,7 +98,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     const timer = setInterval(() => {
       openAuthWindow?.postMessage(
         'requestCredentials',
-        'http://localhost:3000/api/v1/auth/discord/callback',
+        `${baseUrl}/api/v1/auth/discord/callback`,
       )
     }, 500)
 
@@ -109,7 +115,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
     authForm.setAttribute('method', 'post')
     authForm.setAttribute(
       'action',
-      `${url}/api/v1/auth/discord?omniauth_window_type=newWindow`,
+      `${baseUrl}/api/v1/auth/discord?omniauth_window_type=newWindow`,
     )
     authForm.setAttribute('target', windowName)
 

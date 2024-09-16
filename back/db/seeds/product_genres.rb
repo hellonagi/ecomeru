@@ -1,5 +1,4 @@
 ProductGenre.create(
-  id: 1,
   product_id: 1,
   genre_id: 1,
   level: 2,
@@ -8,7 +7,6 @@ ProductGenre.create(
 )
 
 ProductGenre.create(
-  id: 2,
   product_id: 1,
   genre_id: 2,
   level: 1,
@@ -17,7 +15,6 @@ ProductGenre.create(
 )
 
 ProductGenre.create(
-  id: 3,
   product_id: 2,
   genre_id: 1,
   level: 2,
@@ -26,7 +23,6 @@ ProductGenre.create(
 )
 
 ProductGenre.create(
-  id: 4,
   product_id: 2,
   genre_id: 2,
   level: 1,
@@ -35,7 +31,6 @@ ProductGenre.create(
 )
 
 ProductGenre.create(
-  id: 5,
   product_id: 3,
   genre_id: 3,
   level: 4,
@@ -44,7 +39,6 @@ ProductGenre.create(
 )
 
 ProductGenre.create(
-  id: 6,
   product_id: 3,
   genre_id: 2,
   level: 1,
@@ -53,7 +47,6 @@ ProductGenre.create(
 )
 
 ProductGenre.create(
-  id: 7,
   product_id: 3,
   genre_id: 4,
   level: 2,
@@ -62,7 +55,6 @@ ProductGenre.create(
 )
 
 ProductGenre.create(
-  id: 8,
   product_id: 3,
   genre_id: 5,
   level: 3,
@@ -71,7 +63,6 @@ ProductGenre.create(
 )
 
 ProductGenre.create(
-  id: 9,
   product_id: 4,
   genre_id: 6,
   level: 4,
@@ -80,7 +71,6 @@ ProductGenre.create(
 )
 
 ProductGenre.create(
-  id: 10,
   product_id: 4,
   genre_id: 2,
   level: 1,
@@ -89,7 +79,6 @@ ProductGenre.create(
 )
 
 ProductGenre.create(
-  id: 11,
   product_id: 4,
   genre_id: 4,
   level: 2,
@@ -98,7 +87,6 @@ ProductGenre.create(
 )
 
 ProductGenre.create(
-  id: 12,
   product_id: 4,
   genre_id: 7,
   level: 3,
@@ -107,7 +95,6 @@ ProductGenre.create(
 )
 
 ProductGenre.create(
-  id: 13,
   product_id: 5,
   genre_id: 8,
   level: 2,
@@ -116,7 +103,6 @@ ProductGenre.create(
 )
 
 ProductGenre.create(
-  id: 14,
   product_id: 5,
   genre_id: 2,
   level: 1,
@@ -125,7 +111,6 @@ ProductGenre.create(
 )
 
 ProductGenre.create(
-  id: 15,
   product_id: 6,
   genre_id: 1,
   level: 2,
@@ -134,7 +119,6 @@ ProductGenre.create(
 )
 
 ProductGenre.create(
-  id: 16,
   product_id: 6,
   genre_id: 2,
   level: 1,
@@ -143,7 +127,6 @@ ProductGenre.create(
 )
 
 ProductGenre.create(
-  id: 17,
   product_id: 7,
   genre_id: 9,
   level: 3,
@@ -152,7 +135,6 @@ ProductGenre.create(
 )
 
 ProductGenre.create(
-  id: 18,
   product_id: 7,
   genre_id: 10,
   level: 1,
@@ -161,7 +143,6 @@ ProductGenre.create(
 )
 
 ProductGenre.create(
-  id: 19,
   product_id: 7,
   genre_id: 11,
   level: 2,
@@ -170,7 +151,6 @@ ProductGenre.create(
 )
 
 ProductGenre.create(
-  id: 20,
   product_id: 8,
   genre_id: 9,
   level: 3,
@@ -179,7 +159,6 @@ ProductGenre.create(
 )
 
 ProductGenre.create(
-  id: 21,
   product_id: 8,
   genre_id: 10,
   level: 1,
@@ -188,7 +167,6 @@ ProductGenre.create(
 )
 
 ProductGenre.create(
-  id: 22,
   product_id: 8,
   genre_id: 11,
   level: 2,
@@ -197,7 +175,6 @@ ProductGenre.create(
 )
 
 ProductGenre.create(
-  id: 23,
   product_id: 9,
   genre_id: 9,
   level: 3,
@@ -206,7 +183,6 @@ ProductGenre.create(
 )
 
 ProductGenre.create(
-  id: 24,
   product_id: 9,
   genre_id: 10,
   level: 1,
@@ -215,7 +191,6 @@ ProductGenre.create(
 )
 
 ProductGenre.create(
-  id: 25,
   product_id: 9,
   genre_id: 11,
   level: 2,
@@ -224,7 +199,6 @@ ProductGenre.create(
 )
 
 ProductGenre.create(
-  id: 26,
   product_id: 10,
   genre_id: 9,
   level: 3,
@@ -233,7 +207,6 @@ ProductGenre.create(
 )
 
 ProductGenre.create(
-  id: 27,
   product_id: 10,
   genre_id: 10,
   level: 1,
@@ -242,7 +215,6 @@ ProductGenre.create(
 )
 
 ProductGenre.create(
-  id: 28,
   product_id: 10,
   genre_id: 11,
   level: 2,
@@ -251,7 +223,6 @@ ProductGenre.create(
 )
 
 ProductGenre.create(
-  id: 29,
   product_id: 11,
   genre_id: 9,
   level: 3,
@@ -260,7 +231,6 @@ ProductGenre.create(
 )
 
 ProductGenre.create(
-  id: 30,
   product_id: 11,
   genre_id: 10,
   level: 1,
@@ -269,7 +239,6 @@ ProductGenre.create(
 )
 
 ProductGenre.create(
-  id: 31,
   product_id: 11,
   genre_id: 11,
   level: 2,
@@ -278,7 +247,6 @@ ProductGenre.create(
 )
 
 ProductGenre.create(
-  id: 32,
   product_id: 12,
   genre_id: 9,
   level: 3,
@@ -287,7 +255,6 @@ ProductGenre.create(
 )
 
 ProductGenre.create(
-  id: 33,
   product_id: 12,
   genre_id: 10,
   level: 1,
@@ -296,7 +263,6 @@ ProductGenre.create(
 )
 
 ProductGenre.create(
-  id: 34,
   product_id: 12,
   genre_id: 11,
   level: 2,
@@ -305,7 +271,6 @@ ProductGenre.create(
 )
 
 ProductGenre.create(
-  id: 35,
   product_id: 13,
   genre_id: 9,
   level: 3,
@@ -314,7 +279,6 @@ ProductGenre.create(
 )
 
 ProductGenre.create(
-  id: 36,
   product_id: 13,
   genre_id: 10,
   level: 1,
@@ -323,7 +287,6 @@ ProductGenre.create(
 )
 
 ProductGenre.create(
-  id: 37,
   product_id: 13,
   genre_id: 11,
   level: 2,
@@ -332,7 +295,6 @@ ProductGenre.create(
 )
 
 ProductGenre.create(
-  id: 38,
   product_id: 14,
   genre_id: 9,
   level: 3,
@@ -341,7 +303,6 @@ ProductGenre.create(
 )
 
 ProductGenre.create(
-  id: 39,
   product_id: 14,
   genre_id: 10,
   level: 1,
@@ -350,7 +311,6 @@ ProductGenre.create(
 )
 
 ProductGenre.create(
-  id: 40,
   product_id: 14,
   genre_id: 11,
   level: 2,
@@ -359,7 +319,6 @@ ProductGenre.create(
 )
 
 ProductGenre.create(
-  id: 41,
   product_id: 15,
   genre_id: 9,
   level: 3,
@@ -368,7 +327,6 @@ ProductGenre.create(
 )
 
 ProductGenre.create(
-  id: 42,
   product_id: 15,
   genre_id: 10,
   level: 1,
@@ -377,7 +335,6 @@ ProductGenre.create(
 )
 
 ProductGenre.create(
-  id: 43,
   product_id: 15,
   genre_id: 11,
   level: 2,
@@ -386,7 +343,6 @@ ProductGenre.create(
 )
 
 ProductGenre.create(
-  id: 44,
   product_id: 16,
   genre_id: 12,
   level: 3,
@@ -395,7 +351,6 @@ ProductGenre.create(
 )
 
 ProductGenre.create(
-  id: 45,
   product_id: 16,
   genre_id: 13,
   level: 1,
@@ -404,7 +359,6 @@ ProductGenre.create(
 )
 
 ProductGenre.create(
-  id: 46,
   product_id: 16,
   genre_id: 14,
   level: 2,
@@ -413,7 +367,6 @@ ProductGenre.create(
 )
 
 ProductGenre.create(
-  id: 47,
   product_id: 17,
   genre_id: 12,
   level: 3,
@@ -422,7 +375,6 @@ ProductGenre.create(
 )
 
 ProductGenre.create(
-  id: 48,
   product_id: 17,
   genre_id: 13,
   level: 1,
@@ -431,7 +383,6 @@ ProductGenre.create(
 )
 
 ProductGenre.create(
-  id: 49,
   product_id: 17,
   genre_id: 14,
   level: 2,
@@ -440,7 +391,6 @@ ProductGenre.create(
 )
 
 ProductGenre.create(
-  id: 50,
   product_id: 18,
   genre_id: 12,
   level: 3,
@@ -449,7 +399,6 @@ ProductGenre.create(
 )
 
 ProductGenre.create(
-  id: 51,
   product_id: 18,
   genre_id: 13,
   level: 1,
@@ -458,7 +407,6 @@ ProductGenre.create(
 )
 
 ProductGenre.create(
-  id: 52,
   product_id: 18,
   genre_id: 14,
   level: 2,
@@ -467,7 +415,6 @@ ProductGenre.create(
 )
 
 ProductGenre.create(
-  id: 53,
   product_id: 19,
   genre_id: 12,
   level: 3,
@@ -476,7 +423,6 @@ ProductGenre.create(
 )
 
 ProductGenre.create(
-  id: 54,
   product_id: 19,
   genre_id: 13,
   level: 1,
@@ -485,7 +431,6 @@ ProductGenre.create(
 )
 
 ProductGenre.create(
-  id: 55,
   product_id: 19,
   genre_id: 14,
   level: 2,
@@ -494,7 +439,6 @@ ProductGenre.create(
 )
 
 ProductGenre.create(
-  id: 56,
   product_id: 20,
   genre_id: 12,
   level: 3,
@@ -503,7 +447,6 @@ ProductGenre.create(
 )
 
 ProductGenre.create(
-  id: 57,
   product_id: 20,
   genre_id: 13,
   level: 1,
@@ -512,7 +455,6 @@ ProductGenre.create(
 )
 
 ProductGenre.create(
-  id: 58,
   product_id: 20,
   genre_id: 14,
   level: 2,
@@ -521,7 +463,6 @@ ProductGenre.create(
 )
 
 ProductGenre.create(
-  id: 59,
   product_id: 21,
   genre_id: 15,
   level: 3,
@@ -530,7 +471,6 @@ ProductGenre.create(
 )
 
 ProductGenre.create(
-  id: 60,
   product_id: 21,
   genre_id: 13,
   level: 1,
@@ -539,7 +479,6 @@ ProductGenre.create(
 )
 
 ProductGenre.create(
-  id: 61,
   product_id: 21,
   genre_id: 16,
   level: 2,
@@ -548,7 +487,6 @@ ProductGenre.create(
 )
 
 ProductGenre.create(
-  id: 62,
   product_id: 22,
   genre_id: 12,
   level: 3,
@@ -557,7 +495,6 @@ ProductGenre.create(
 )
 
 ProductGenre.create(
-  id: 63,
   product_id: 22,
   genre_id: 13,
   level: 1,
@@ -566,7 +503,6 @@ ProductGenre.create(
 )
 
 ProductGenre.create(
-  id: 64,
   product_id: 22,
   genre_id: 14,
   level: 2,
@@ -575,7 +511,6 @@ ProductGenre.create(
 )
 
 ProductGenre.create(
-  id: 65,
   product_id: 23,
   genre_id: 12,
   level: 3,
@@ -584,7 +519,6 @@ ProductGenre.create(
 )
 
 ProductGenre.create(
-  id: 66,
   product_id: 23,
   genre_id: 13,
   level: 1,
@@ -593,7 +527,6 @@ ProductGenre.create(
 )
 
 ProductGenre.create(
-  id: 67,
   product_id: 23,
   genre_id: 14,
   level: 2,
@@ -602,7 +535,6 @@ ProductGenre.create(
 )
 
 ProductGenre.create(
-  id: 68,
   product_id: 24,
   genre_id: 17,
   level: 3,
@@ -611,7 +543,6 @@ ProductGenre.create(
 )
 
 ProductGenre.create(
-  id: 69,
   product_id: 24,
   genre_id: 13,
   level: 1,
@@ -620,7 +551,6 @@ ProductGenre.create(
 )
 
 ProductGenre.create(
-  id: 70,
   product_id: 24,
   genre_id: 18,
   level: 2,
@@ -629,7 +559,6 @@ ProductGenre.create(
 )
 
 ProductGenre.create(
-  id: 71,
   product_id: 25,
   genre_id: 17,
   level: 3,
@@ -638,7 +567,6 @@ ProductGenre.create(
 )
 
 ProductGenre.create(
-  id: 72,
   product_id: 25,
   genre_id: 13,
   level: 1,
@@ -647,7 +575,6 @@ ProductGenre.create(
 )
 
 ProductGenre.create(
-  id: 73,
   product_id: 25,
   genre_id: 18,
   level: 2,
@@ -656,7 +583,6 @@ ProductGenre.create(
 )
 
 ProductGenre.create(
-  id: 74,
   product_id: 26,
   genre_id: 19,
   level: 3,
@@ -665,7 +591,6 @@ ProductGenre.create(
 )
 
 ProductGenre.create(
-  id: 75,
   product_id: 26,
   genre_id: 13,
   level: 1,
@@ -674,7 +599,6 @@ ProductGenre.create(
 )
 
 ProductGenre.create(
-  id: 76,
   product_id: 26,
   genre_id: 18,
   level: 2,
@@ -683,7 +607,6 @@ ProductGenre.create(
 )
 
 ProductGenre.create(
-  id: 77,
   product_id: 27,
   genre_id: 19,
   level: 3,
@@ -692,7 +615,6 @@ ProductGenre.create(
 )
 
 ProductGenre.create(
-  id: 78,
   product_id: 27,
   genre_id: 13,
   level: 1,
@@ -701,7 +623,6 @@ ProductGenre.create(
 )
 
 ProductGenre.create(
-  id: 79,
   product_id: 27,
   genre_id: 18,
   level: 2,
@@ -710,7 +631,6 @@ ProductGenre.create(
 )
 
 ProductGenre.create(
-  id: 80,
   product_id: 28,
   genre_id: 19,
   level: 3,
@@ -719,7 +639,6 @@ ProductGenre.create(
 )
 
 ProductGenre.create(
-  id: 81,
   product_id: 28,
   genre_id: 13,
   level: 1,
@@ -728,7 +647,6 @@ ProductGenre.create(
 )
 
 ProductGenre.create(
-  id: 82,
   product_id: 28,
   genre_id: 18,
   level: 2,
@@ -737,7 +655,6 @@ ProductGenre.create(
 )
 
 ProductGenre.create(
-  id: 83,
   product_id: 29,
   genre_id: 20,
   level: 3,
@@ -746,7 +663,6 @@ ProductGenre.create(
 )
 
 ProductGenre.create(
-  id: 84,
   product_id: 29,
   genre_id: 13,
   level: 1,
@@ -755,7 +671,6 @@ ProductGenre.create(
 )
 
 ProductGenre.create(
-  id: 85,
   product_id: 29,
   genre_id: 14,
   level: 2,
@@ -764,7 +679,6 @@ ProductGenre.create(
 )
 
 ProductGenre.create(
-  id: 86,
   product_id: 30,
   genre_id: 20,
   level: 3,
@@ -773,7 +687,6 @@ ProductGenre.create(
 )
 
 ProductGenre.create(
-  id: 87,
   product_id: 30,
   genre_id: 13,
   level: 1,
@@ -782,7 +695,6 @@ ProductGenre.create(
 )
 
 ProductGenre.create(
-  id: 88,
   product_id: 30,
   genre_id: 14,
   level: 2,
@@ -791,7 +703,6 @@ ProductGenre.create(
 )
 
 ProductGenre.create(
-  id: 89,
   product_id: 31,
   genre_id: 20,
   level: 3,
@@ -800,7 +711,6 @@ ProductGenre.create(
 )
 
 ProductGenre.create(
-  id: 90,
   product_id: 31,
   genre_id: 13,
   level: 1,
@@ -809,7 +719,6 @@ ProductGenre.create(
 )
 
 ProductGenre.create(
-  id: 91,
   product_id: 31,
   genre_id: 14,
   level: 2,

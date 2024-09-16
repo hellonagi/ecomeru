@@ -15,4 +15,7 @@ export default withBundleAnalyzer({
   images: {
     domains: ['thumbnail.image.rakuten.co.jp'],
   },
+  env: {
+    RAILS_API_URL: process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3000',
+  },
 })

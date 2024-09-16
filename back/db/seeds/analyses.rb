@@ -1,5 +1,4 @@
 Analysis.create(
-  id: 1,
   product_id: 1,
   positive: 77.5,
   neutral: 12.5,
@@ -12,7 +11,6 @@ Analysis.create(
 )
 
 Analysis.create(
-  id: 2,
   product_id: 2,
   positive: 63,
   neutral: 24,
@@ -25,7 +23,6 @@ Analysis.create(
 )
 
 Analysis.create(
-  id: 3,
   product_id: 3,
   positive: 89,
   neutral: 7,
@@ -38,7 +35,6 @@ Analysis.create(
 )
 
 Analysis.create(
-  id: 4,
   product_id: 4,
   positive: 82,
   neutral: 12,
@@ -51,7 +47,6 @@ Analysis.create(
 )
 
 Analysis.create(
-  id: 5,
   product_id: 5,
   positive: 95,
   neutral: 4,
@@ -64,7 +59,6 @@ Analysis.create(
 )
 
 Analysis.create(
-  id: 6,
   product_id: 6,
   positive: 74,
   neutral: 18,
@@ -77,7 +71,6 @@ Analysis.create(
 )
 
 Analysis.create(
-  id: 7,
   product_id: 7,
   positive: 65,
   neutral: 23,
@@ -90,7 +83,6 @@ Analysis.create(
 )
 
 Analysis.create(
-  id: 8,
   product_id: 8,
   positive: 65,
   neutral: 20,
@@ -103,7 +95,6 @@ Analysis.create(
 )
 
 Analysis.create(
-  id: 9,
   product_id: 9,
   positive: 85,
   neutral: 10,
@@ -116,7 +107,6 @@ Analysis.create(
 )
 
 Analysis.create(
-  id: 10,
   product_id: 10,
   positive: 51,
   neutral: 27,
@@ -129,7 +119,6 @@ Analysis.create(
 )
 
 Analysis.create(
-  id: 11,
   product_id: 11,
   positive: 63.2,
   neutral: 25.7,
@@ -142,7 +131,6 @@ Analysis.create(
 )
 
 Analysis.create(
-  id: 12,
   product_id: 12,
   positive: 71,
   neutral: 23,
@@ -155,7 +143,6 @@ Analysis.create(
 )
 
 Analysis.create(
-  id: 13,
   product_id: 13,
   positive: 66,
   neutral: 26,
@@ -168,7 +155,6 @@ Analysis.create(
 )
 
 Analysis.create(
-  id: 14,
   product_id: 14,
   positive: 82,
   neutral: 16,
@@ -181,7 +167,6 @@ Analysis.create(
 )
 
 Analysis.create(
-  id: 15,
   product_id: 15,
   positive: 74,
   neutral: 14,
@@ -194,7 +179,6 @@ Analysis.create(
 )
 
 Analysis.create(
-  id: 16,
   product_id: 16,
   positive: 49,
   neutral: 27,
@@ -207,7 +191,6 @@ Analysis.create(
 )
 
 Analysis.create(
-  id: 17,
   product_id: 17,
   positive: 72.5,
   neutral: 22.5,
@@ -220,7 +203,6 @@ Analysis.create(
 )
 
 Analysis.create(
-  id: 18,
   product_id: 18,
   positive: 64,
   neutral: 25,
@@ -233,7 +215,6 @@ Analysis.create(
 )
 
 Analysis.create(
-  id: 19,
   product_id: 19,
   positive: 65,
   neutral: 20,
@@ -246,7 +227,6 @@ Analysis.create(
 )
 
 Analysis.create(
-  id: 20,
   product_id: 20,
   positive: 64,
   neutral: 25,
@@ -259,7 +239,6 @@ Analysis.create(
 )
 
 Analysis.create(
-  id: 21,
   product_id: 21,
   positive: 78,
   neutral: 17,
@@ -272,7 +251,6 @@ Analysis.create(
 )
 
 Analysis.create(
-  id: 22,
   product_id: 22,
   positive: 80,
   neutral: 15,
@@ -285,7 +263,6 @@ Analysis.create(
 )
 
 Analysis.create(
-  id: 23,
   product_id: 23,
   positive: 65,
   neutral: 30,
@@ -298,7 +275,6 @@ Analysis.create(
 )
 
 Analysis.create(
-  id: 24,
   product_id: 24,
   positive: 70,
   neutral: 20,
@@ -311,7 +287,6 @@ Analysis.create(
 )
 
 Analysis.create(
-  id: 25,
   product_id: 25,
   positive: 68,
   neutral: 20,
@@ -324,7 +299,6 @@ Analysis.create(
 )
 
 Analysis.create(
-  id: 26,
   product_id: 26,
   positive: 80,
   neutral: 20,
@@ -337,7 +311,6 @@ Analysis.create(
 )
 
 Analysis.create(
-  id: 27,
   product_id: 27,
   positive: 76,
   neutral: 12,
@@ -350,7 +323,6 @@ Analysis.create(
 )
 
 Analysis.create(
-  id: 28,
   product_id: 28,
   positive: 73,
   neutral: 18,
@@ -363,7 +335,6 @@ Analysis.create(
 )
 
 Analysis.create(
-  id: 29,
   product_id: 29,
   positive: 86.5,
   neutral: 9.5,
@@ -376,7 +347,6 @@ Analysis.create(
 )
 
 Analysis.create(
-  id: 30,
   product_id: 30,
   positive: 58,
   neutral: 29,
@@ -389,7 +359,6 @@ Analysis.create(
 )
 
 Analysis.create(
-  id: 31,
   product_id: 31,
   positive: 94,
   neutral: 6,

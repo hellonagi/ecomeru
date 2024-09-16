@@ -2,7 +2,7 @@ import { Title, Text, Card, SimpleGrid, rem } from '@mantine/core'
 import { IconAnalyze, IconStars, IconUser } from '@tabler/icons-react'
 import classes from './Features.module.css'
 
-const mockdata = [
+const data = [
   {
     title: 'AIレビュー分析＆要約',
     description:
@@ -24,7 +24,7 @@ const mockdata = [
 ]
 
 export function Features() {
-  const features = mockdata.map((feature) => (
+  const features = data.map((feature) => (
     <Card
       key={feature.title}
       shadow="md"

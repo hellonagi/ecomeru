@@ -43,7 +43,7 @@ export function Product({ product, shop, review_url }: any) {
             <Stack justify="flex-start" gap={4}>
               <Text>{product.catchcopy}</Text>
               <Group gap={8}>
-                {product.genres.map((genre: any) => (
+                {product?.genres.map((genre: any) => (
                   <Badge key={genre.name} color="gray" radius="xs">
                     {genre.name}
                   </Badge>

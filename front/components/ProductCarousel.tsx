@@ -21,7 +21,7 @@ export function ProductCarousel({ products }: any) {
       mt={16}
       classNames={classes}
     >
-      {products.map((product: any) => (
+      {products?.map((product: any) => (
         <Carousel.Slide key={product.code}>
           <ProductCard product={product} />
         </Carousel.Slide>

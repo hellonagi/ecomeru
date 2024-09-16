@@ -2,9 +2,13 @@
 
 export async function fetchProfile(username: string) {
   try {
-    const response = await fetch(`http://back:3000/api/v1/users/${username}`, {
-      method: 'GET',
-    })
+    const response = await fetch(
+      `${process.env.RAILS_API_URL}/api/v1/users/${username}`,
+      {
+        method: 'GET',
+        next: { revalidate: 0 },
+      },
+    )
 
     const data = await response.json()
 

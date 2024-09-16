@@ -1,5 +1,4 @@
 Product.create(
-  id: 1,
   name: 'い・ろ・は・す ラベルレス(1箱24本入(1本560ml))【2shdrk】【いろはす(I LOHAS)】[水 ミネラルウォーター]',
   slug: 'soukaidrink_4902102139410',
   code: 'soukaidrink:10007430',
@@ -14,7 +13,6 @@ Product.create(
   updated_at: '2024-09-15 18:26:00.414701'
 )
 Product.create(
-  id: 2,
   name: 'アサヒ おいしい水 天然水 ラベルレスボトル( 600ml×24本入)【おいしい水】[ミネラルウォーター 天然水]',
   slug: 'soukaidrink_4514603369106',
   code: 'soukaidrink:10006103',
@@ -30,7 +28,6 @@ Product.create(
 )
 
 Product.create(
-  id: 3,
   name: 'アサヒ 十六茶麦茶 ラベルレス ペットボトル(660ml*24本入)【十六茶】[お茶 麦茶]',
   slug: 'soukaidrink_4514603392708',
   code: 'soukaidrink:10007660',
@@ -46,7 +43,6 @@ Product.create(
 )
 
 Product.create(
-  id: 4,
   name: 'アサヒ 緑茶 ラベルレス ペットボトル(630ml*24本入)【アサヒ】[お茶 緑茶]',
   slug: 'soukaidrink_4514603399608',
   code: 'soukaidrink:10008483',
@@ -62,7 +58,6 @@ Product.create(
 )
 
 Product.create(
-  id: 5,
   name: '大塚製薬 ポカリスエット 500ml ペットボトル 24本 1ケース【送料無料（一部地域除く）】',
   slug: 'felicity-wine_ots0002',
   code: 'felicity-wine:10010845',
@@ -78,7 +73,6 @@ Product.create(
 )
 
 Product.create(
-  id: 6,
   name: 'キリン 自然が磨いた天然水 ラベルレス(600ml×24本入)【自然が磨いた天然水】[水 ミネラルウォーター 天然水 ペットボトル]',
   slug: 'soukaidrink_4909411093389',
   code: 'soukaidrink:10017022',
@@ -94,7 +88,6 @@ Product.create(
 )
 
 Product.create(
-  id: 7,
   name: 'SONY WF-1000XM5 ソニー ブラック/プラチナシルバー 完全ワイヤレスイヤホン ノイズキャンセリング Bluetooth イヤホン ワイヤレス カナル型 ハイレゾワイヤレス ノイズキャンセル 防水 小型軽量化 小さい 軽い',
   slug: 'e-earphone_sony-wf1000xm5',
   code: 'e-earphone:10034795',
@@ -110,7 +103,6 @@ Product.create(
 )
 
 Product.create(
-  id: 8,
   name: 'SONY ソニー WF-C700N BZ ブラック 黒 完全ワイヤレスイヤホン ノイズキャンセリング Bluetooth イヤホン カナル型 コンパクト 小型 小さい かわいい 通話 マイク付き ノイズキャンセル ノイキャン WFC700NBZ',
   slug: 'e-earphone_4548736143586',
   code: 'e-earphone:10034338',
@@ -126,7 +118,6 @@ Product.create(
 )
 
 Product.create(
-  id: 9,
   name: 'SONY ソニー WF-C510 新型 完全ワイヤレスイヤホン Bluetoothイヤホン ブルートゥース イヤホンワイヤレス カナル型 防水 低遅延 通話 マイク付き コンパクト 小型軽量 小さい かわいい',
   slug: 'e-earphone_sony-wfc510',
   code: 'e-earphone:10037633',
@@ -142,7 +133,6 @@ Product.create(
 )
 
 Product.create(
-  id: 10,
   name: 'Bose Ultra Open Earbuds Black ボーズ イヤーカフ型 フルワイヤレスイヤホン オープンイヤー 耳を塞がない 開放型 Bluetooth イヤホン ワイヤレス ブルートゥース マイク付き 通話 ながら聴き',
   slug: 'e-earphone_4969929259240',
   code: 'e-earphone:10036958',
@@ -158,7 +148,6 @@ Product.create(
 )
 
 Product.create(
-  id: 11,
   name: 'Shokz OpenFit ショックス オープンフィット 完全ワイヤレスイヤホン オープンイヤー型 耳をふさがないイヤホン オープンイヤーイヤホン Bluetooth ブルートゥース マイク付き 通話',
   slug: 'e-earphone_shokz-openfit',
   code: 'e-earphone:10034674',
@@ -174,7 +163,6 @@ Product.create(
 )
 
 Product.create(
-  id: 12,
   name: 'SONY LinkBuds S ブラック WF-LS900N BC 完全ワイヤレスイヤホン ノイズキャンセリング Bluetooth イヤホン ワイヤレス カナル型 ノイズキャンセル 小型軽量 コンパクト 小さい 軽い リンクバッズ WFLS900NBC',
   slug: 'e-earphone_4548736132993',
   code: 'e-earphone:10032893',
@@ -190,7 +178,6 @@ Product.create(
 )
 
 Product.create(
-  id: 13,
   name: 'Shokz ショックス OpenRun Mini Black 骨伝導イヤホン Bluetooth 耳をふさがない ワイヤレスイヤホン マイク付き 防水 2台同時接続 パソコン スマホ テレワーク オープンランミニ',
   slug: 'e-earphone_4512223694271',
   code: 'e-earphone:10032902',
@@ -206,7 +193,6 @@ Product.create(
 )
 
 Product.create(
-  id: 14,
   name: 'Shokz OpenComm2 Black ショックス 骨伝導イヤホン 耳を塞がない Bluetooth イヤホン ワイヤレス ブルートゥース 骨伝導 マイク付き 通話 テレワーク 骨伝導ヘッドセット 2台同時接続 ながら聴き',
   slug: 'e-earphone_4512223696299',
   code: 'e-earphone:10034946',
@@ -222,7 +208,6 @@ Product.create(
 )
 
 Product.create(
-  id: 15,
   name: 'SONY WH-1000XM5 BM ブラック 黒 ソニー ワイヤレスヘッドホン ヘッドホン Bluetooth ノイズキャンセリング 折りたたみ 密閉型 iPhone Android PC 通話 マイク付き 送料無料 長期保証加入可 国内正規品',
   slug: 'e-earphone_4548736132566',
   code: 'e-earphone:10032826',
@@ -238,7 +223,6 @@ Product.create(
 )
 
 Product.create(
-  id: 16,
   name: '【SALE】ロジクール ワイヤレスマウス M220 無線 マウス 静音 小型 左右対称 ワイヤレス windows mac chrome M220CG M220EB M220VR M220OW M220RO 国内正規品 3年間無償保証',
   slug: 'logicool_m220gr',
   code: 'logicool:10000275',
@@ -254,7 +238,6 @@ Product.create(
 )
 
 Product.create(
-  id: 17,
   name: 'ロジクール ワイヤレスマウス 無線 マウス M185 小型 電池寿命最大12ケ月 M185CGa M185BLa M185RDa 国内正規品 3年間無償保証',
   slug: 'logicool_m185sg',
   code: 'logicool:10000272',
@@ -270,7 +253,6 @@ Product.create(
 )
 
 Product.create(
-  id: 18,
   name: '【SALE】ロジクール ワイヤレスマウス トラックボール 無線 M575Sa Bluetooth Unifying トラックボールマウス ワイヤレス マウス windows mac iPad 国内正規品 1年間無償保証',
   slug: 'logicool_m575s',
   code: 'logicool:10000352',
@@ -286,7 +268,6 @@ Product.create(
 )
 
 Product.create(
-  id: 19,
   name: 'ロジクール ワイヤレスマウス M221 無線 マウス 静音 小型 左右対称 ワイヤレス windows mac chrome M221CG M221EB M221VR M221OW M221RO 国内正規品 3年間無償保証',
   slug: 'logicool_m221gr',
   code: 'logicool:10000276',
@@ -302,7 +283,6 @@ Product.create(
 )
 
 Product.create(
-  id: 20,
   name: 'ロジクール Signature M650 ワイヤレスマウス レギュラーサイズ 静音 Bluetooth Logi Bolt 無線 windows mac M650MGR M650MOW M650MRO M650MBL M650MRD 国内正規品 2年間無償保証',
   slug: 'logicool_m650mgr',
   code: 'logicool:10000444',
@@ -318,7 +298,6 @@ Product.create(
 )
 
 Product.create(
-  id: 21,
   name: 'ロジクール マウスパッド MP10 撥水 グラファイト ローズ ブルーグレー MP10GR MP10RO MP10BL 国内正規品 2年間無償保証',
   slug: 'logicool_mp10gr',
   code: 'logicool:10000438',
@@ -334,7 +313,6 @@ Product.create(
 )
 
 Product.create(
-  id: 22,
   name: '【SALE】ロジクール 有線マウス M100n 左右対称型 USB 簡単接続 M100nBKa M100nWHa 国内正規品 3年間無償保証',
   slug: 'logicool_m100nbk',
   code: 'logicool:10000471',
@@ -350,7 +328,6 @@ Product.create(
 )
 
 Product.create(
-  id: 23,
   name: 'ロジクール MX MASTER 3S アドバンスド ワイヤレス マウス MX2300GR MX2300PG Logi Bolt Bluetooth Unifying非対応 静音 無線 windows mac iPad Chrome 国内正規品 2年間無償保証',
   slug: 'logicool_mx2300gr',
   code: 'logicool:10000455',
@@ -366,7 +343,6 @@ Product.create(
 )
 
 Product.create(
-  id: 24,
   name: 'Logicool G ゲーミングマウス 無線 G703h HEROセンサー LIGHTSPEED ワイヤレス エルゴノミクス LIGHTSYNC RGB POWERPLAY ワイヤレス充電 国内正規品 2年間無償保証',
   slug: 'logicool_g703h',
   code: 'logicool:10000211',
@@ -382,7 +358,6 @@ Product.create(
 )
 
 Product.create(
-  id: 25,
   name: 'Logicool G PRO X SUPERLIGHT ワイヤレス ゲーミングマウス 史上最軽量 63g未満 LIGHTSPEED無線技術 HERO 25Kセンサー POWERPLAY無線充電対応 G-PPD-003WL-BK G-PPD-003WL-WH ブラック ホワイト 国内正規品 2年間無償保証',
   slug: 'logicool_g-ppd-003wl-bk',
   code: 'logicool:10000359',
@@ -398,7 +373,6 @@ Product.create(
 )
 
 Product.create(
-  id: 26,
   name: 'Logicool G PRO ゲーミングキーボード テンキーレス 有線 クリッキー GXスイッチ 日本語配列 LIGHTSYNC RGB 着脱式ケーブル G-PKB-002CK 国内正規品 2年間無償保証',
   slug: 'logicool_g-pkb-002ck',
   code: 'logicool:10000447',
@@ -414,7 +388,6 @@ Product.create(
 )
 
 Product.create(
-  id: 27,
   name: 'Logicool G PRO ゲーミングキーボード テンキーレス 有線 リニア GXスイッチ 日本語配列 LIGHTSYNC RGB 着脱式ケーブル G-PKB-002LN 国内正規品 2年間無償保証',
   slug: 'logicool_g-pkb-002ln',
   code: 'logicool:10000446',
@@ -430,7 +403,6 @@ Product.create(
 )
 
 Product.create(
-  id: 28,
   name: 'Logicool G ゲーミングキーボード 有線 G213r パームレスト 日本語配列 メンブレン キーボード 静音 LIGHTSYNC RGB 国内正規品 2年間無償保証',
   slug: 'logicool_g213r',
   code: 'logicool:10000393',
@@ -446,7 +418,6 @@ Product.create(
 )
 
 Product.create(
-  id: 29,
   name: 'HHKB Professional HYBRID Type-S 英語配列／墨 Bluetooth ワイヤレス キーボード USB 無線/有線両対応 高級 テンキーレス 静音 コンパクト 静電容量無接点 東プレ軸',
   slug: 'pfudirect_pd-kb800bs',
   code: 'pfudirect:10000626',
@@ -462,7 +433,6 @@ Product.create(
 )
 
 Product.create(
-  id: 30,
   name: '【公式】 REALFORCE R3 キーボード 日本語配列 ブラック フルキーボード テンキーレス 45g 変荷重 30g 昇華印字 レーザー印字 Bluetooth 5.0 USB 静音 ワイヤレス 無線 有線 両対応 東プレ',
   slug: 'realforce_r3hb',
   code: 'realforce:10000113',
@@ -478,7 +448,6 @@ Product.create(
 )
 
 Product.create(
-  id: 31,
   name: '【公式】 REALFORCE R3S キーボード 日本語配列 フルキーボード テンキーレス 45g 変荷重 30g 標準 静音 ブラック 有線 USB レーザー印刷 東プレ リアルフォース',
   slug: 'realforce_r3sb',
   code: 'realforce:10000131',

@@ -2,9 +2,9 @@
 
 export async function fetchProductFromDB(slug: string) {
   try {
-    const response = await fetch(`http://back:3000/api/v1/products/${slug}`, {
+    const response = await fetch(`${process.env.RAILS_API_URL}/api/v1/products/${slug}`, {
       method: 'GET',
-      cache: 'no-store',
+      next: { revalidate: 0 },
     })
 
     if (response.ok) {
@@ -14,7 +14,7 @@ export async function fetchProductFromDB(slug: string) {
 
     return null
   } catch (error) {
-    console.log('ERR')
+    console.log('ERR2')
     console.error(error)
     return null
   }

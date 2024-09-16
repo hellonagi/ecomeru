@@ -7,7 +7,7 @@ export async function validateToken(
 ) {
   try {
     const response = await fetch(
-      'http://back:3000/api/v1/auth/validate_token',
+      `${process.env.RAILS_API_URL}/api/v1/auth/validate_token`,
       {
         method: 'GET',
         headers: {
