@@ -55,7 +55,7 @@ export default function Header() {
     <>
       <header className={classes.header}>
         <Group h="100%">
-          <Flex flex={1} justify="start">
+          <Flex flex={1} justify="center">
             <Text
               component={Link}
               href="/"
@@ -70,7 +70,7 @@ export default function Header() {
           {/* <Group flex={1} justify="center" h="100%" gap={0} visibleFrom="sm">
             {items}
           </Group> */}
-          <Group flex={1} justify="end" visibleFrom="sm">
+          {/* <Group flex={1} justify="end" visibleFrom="sm">
             {loading ? (
               <>
                 <Skeleton height={28} circle visible={loading} />
@@ -139,7 +139,7 @@ export default function Header() {
                 )}
               </>
             )}
-          </Group>
+          </Group> */}
 
           <Burger
             opened={drawerOpened}
