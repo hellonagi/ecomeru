@@ -2,6 +2,8 @@
 
 export async function fetchProducts(endpoint: 'positive' | 'recent') {
   try {
+    console.log('ADASDSADSADSADSADSA')
+    console.log(process.env.RAILS_API_URL)
     const response = await fetch(
       `${process.env.RAILS_API_URL}/api/v1/products/${endpoint}`,
       {

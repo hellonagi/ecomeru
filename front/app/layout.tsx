@@ -11,9 +11,9 @@ import Header from '@/components/header/Header'
 import { Footer } from '@/components/footer/Footer'
 
 export const metadata = {
-  title: 'AIレビュー分析',
+  title: 'ecomeru',
   description:
-    'AIレビュー分析は、AI技術を活用してレビューを分析し、ポジティブ・ネガティブな意見を可視化するサービスです。',
+    'ecomeru は、膨大なECサイトのレビューをAI技術を用いて要約し、ユーザーが商品購入の意思決定を迅速かつ効率的に行えるようにサポートするサービスです。',
 }
 
 export default function RootLayout({ children }: { children: any }) {

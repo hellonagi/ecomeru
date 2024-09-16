@@ -9,9 +9,13 @@ services:
       - db_data:/var/lib/postgresql/data
     ports:
       - '5432:5432'
+    networks:
+      - container-link
     restart: always
 
   back:
+    container_name: back
+    hostname: back-server
     build:
       context: ./back
       dockerfile: Dockerfile.prod
@@ -28,9 +32,13 @@ services:
       RAILS_ENV: production
       RAILS_LOG_TO_STDOUT: 'true'
       RAILS_MASTER_KEY: ${RAILS_MASTER_KEY}
+    networks:
+      - container-link
     restart: always
 
   front:
+    container_name: front
+    hostname: front-server
     build:
       context: ./front
       dockerfile: Dockerfile.prod
@@ -42,6 +50,8 @@ services:
     environment:
       BASE_URL: ${BASE_URL_PROD}
       RAILS_API_URL: ${RAILS_API_URL}
+    networks:
+      - container-link
     restart: always
 
   sidekiq:
@@ -61,12 +71,16 @@ services:
       RAILS_MASTER_KEY: ${RAILS_MASTER_KEY}
       RAKUTEN_ID: ${RAKUTEN_ID}
       RAKUTEN_AFFILIATE: ${RAKUTEN_AFFILIATE}
+    networks:
+      - container-link
     restart: always
 
   redis:
     image: 'redis:latest'
     ports:
       - '6379:6379'
+    networks:
+      - container-link
     restart: always
 
   nginx:
@@ -78,7 +92,13 @@ services:
     depends_on:
       - front
       - back
+    networks:
+      - container-link
     restart: always
+
+networks:
+  container-link:
+    driver: bridge
 
 volumes:
   db_data:

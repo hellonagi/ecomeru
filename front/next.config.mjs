@@ -18,6 +18,6 @@ export default withBundleAnalyzer({
   env: {
     RAILS_API_URL: 'http://back:3000',
     BASE_URL_PRO: 'https://ecomeru.com',
-    BASE_URL_DEV: 'https://localhost:80',
+    BASE_URL_DEV: 'http://localhost:80',
   },
 })
