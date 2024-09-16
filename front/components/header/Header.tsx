@@ -52,7 +52,7 @@ export default function Header() {
   ))
 
   return (
-    <Box>
+    <>
       <header className={classes.header}>
         <Group h="100%">
           <Flex flex={1} justify="start">
@@ -147,28 +147,28 @@ export default function Header() {
             hiddenFrom="sm"
           />
         </Group>
+
+        <Drawer
+          opened={drawerOpened}
+          onClose={closeDrawer}
+          size="100%"
+          padding="md"
+          title="Navigation"
+          hiddenFrom="sm"
+          zIndex={1000000}
+        >
+          <ScrollArea h={`calc(100vh - ${rem(80)})`} mx="-md">
+            <Divider my="sm" />
+
+            {items}
+            <Divider my="sm" />
+
+            <Group justify="center" grow pb="xl" px="md">
+              {currentUser ? <LogoutButton /> : <LoginButton />}
+            </Group>
+          </ScrollArea>
+        </Drawer>
       </header>
-
-      <Drawer
-        opened={drawerOpened}
-        onClose={closeDrawer}
-        size="100%"
-        padding="md"
-        title="Navigation"
-        hiddenFrom="sm"
-        zIndex={1000000}
-      >
-        <ScrollArea h={`calc(100vh - ${rem(80)})`} mx="-md">
-          <Divider my="sm" />
-
-          {items}
-          <Divider my="sm" />
-
-          <Group justify="center" grow pb="xl" px="md">
-            {currentUser ? <LogoutButton /> : <LoginButton />}
-          </Group>
-        </ScrollArea>
-      </Drawer>
-    </Box>
+    </>
   )
 }
