@@ -27,6 +27,14 @@ class Api::V1::ProductsController < ApplicationController
     render :recent
   end
 
+  def positive
+    @products = Product.joins(:analysis)
+                       .includes(%i[shops analysis])
+                       .order('analyses.positive DESC')
+                       .limit(9)
+    render :positive
+  end
+
   private
 
   def user_params
