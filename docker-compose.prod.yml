@@ -65,6 +65,8 @@ services:
       - redis
       - back
       - db
+    env_file:
+      - .env
     environment:
       RAILS_ENV: production
       REDIS_URL: redis://redis:6379/0
@@ -87,7 +89,9 @@ services:
     image: nginx:latest
     ports:
       - '80:80'
+      - '443:443'
     volumes:
+      - ./certs:/etc/nginx/certs
       - ./nginx.conf:/etc/nginx/nginx.conf
     depends_on:
       - front
