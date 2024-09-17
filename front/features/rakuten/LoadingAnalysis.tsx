@@ -16,7 +16,7 @@ export function LoadingAnalysis() {
   return (
     <Card shadow="sm" padding="lg" radius="md" withBorder mt={32}>
       <Flex align="center" gap={8}>
-        <Loader color="blue" />
+        <Loader color="blue" ml={8} />
         現在商品のレビューを分析中です。
       </Flex>
     </Card>
