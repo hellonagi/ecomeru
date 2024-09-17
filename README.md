@@ -3,6 +3,7 @@ ecomeru は、膨大なECサイトのレビューをAI技術を用いて要約�
 ecomeruは「Ecommerce」と「まとめる」を組み合わせた造語です。
 
 トップページ
+![home](https://github.com/user-attachments/assets/9bfd8a31-431d-4b39-89f1-5f8fae3eea90)
 
 ## 実装機能
 - ユーザー利用機能
@@ -13,7 +14,9 @@ ecomeruは「Ecommerce」と「まとめる」を組み合わせた造語です�
 - 非ユーザー利用機能
 
 ## 工夫した点
-
+- 外部API処理を、RedisとSidekiqを使って非同期化
+- Dockerを採用し、環境構築の手間を削減
+- カルーセルを使用し、商品画像を並べて表示
 
 ## 使用した技術
 - フロントエンド
