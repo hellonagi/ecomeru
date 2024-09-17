@@ -61,11 +61,8 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
 
   useEffect(() => {
     const handleMessage = (event: MessageEvent) => {
-      if (process.env.NODE_ENV == 'production') {
-        if (event.origin !== baseUrl) return
-      } else {
-        if (`${event.origin}:80` !== baseUrl) return
-      }
+      if (event.origin !== baseUrl) return
+
       console.log('a')
 
       const data = event.data as DiscordUser
