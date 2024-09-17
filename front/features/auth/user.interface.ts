@@ -12,4 +12,7 @@ export interface DiscordUser {
 }
 
 export interface User
-  extends Pick<DiscordUser, 'name' | 'nickname' | 'image' | 'uid'> {}
+  extends Pick<
+    DiscordUser,
+    'name' | 'nickname' | 'username' | 'image' | 'uid'
+  > {}

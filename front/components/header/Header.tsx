@@ -18,7 +18,12 @@ import {
   Skeleton,
 } from '@mantine/core'
 import { useDisclosure } from '@mantine/hooks'
-import { IconLogout, IconSettings, IconChevronDown } from '@tabler/icons-react'
+import {
+  IconLogout,
+  IconSettings,
+  IconChevronDown,
+  IconUser,
+} from '@tabler/icons-react'
 import LoginButton from '@/features/auth/LoginButton'
 import LogoutButton from '@/features/auth/LogoutButton'
 import classes from './Header.module.css'
@@ -112,6 +117,20 @@ export default function Header() {
                     <Menu.Dropdown>
                       <Menu.Label>Settings</Menu.Label>
                       <Menu.Item
+                        component={Link}
+                        href={`/users/${currentUser.username}`}
+                        leftSection={
+                          <IconUser
+                            style={{ width: rem(16), height: rem(16) }}
+                            stroke={1.5}
+                          />
+                        }
+                      >
+                        プロフィール
+                      </Menu.Item>
+                      <Menu.Item
+                        component={Link}
+                        href={`/settings`}
                         leftSection={
                           <IconSettings
                             style={{ width: rem(16), height: rem(16) }}
@@ -119,7 +138,7 @@ export default function Header() {
                           />
                         }
                       >
-                        Account settings
+                        設定
                       </Menu.Item>
                       <Menu.Item
                         leftSection={

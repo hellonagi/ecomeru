@@ -7,6 +7,8 @@ Rails.application.routes.draw do
       resource :user, only: %i[update]
       resources :users, only: %i[show]
 
+      resource :profile, only: %i[show update]
+
       get '/products/recent', to: 'products#recent', as: 'recent'
       get '/products/positive', to: 'products#positive', as: 'positive'
       resources :products, only: %i[show create]

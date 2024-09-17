@@ -75,8 +75,8 @@ export default function InitForm({
       />
       <TextInput
         mt="md"
-        label="ニックネーム"
-        placeholder="ニックネーム"
+        label="表示名"
+        placeholder="表示名"
         variant="filled"
         error={errors.nickname?.message}
         {...register('nickname')}
