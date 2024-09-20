@@ -61,9 +61,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
 
   useEffect(() => {
     const handleMessage = (event: MessageEvent) => {
-      if (event.origin !== baseUrl) return
-
-      console.log('a')
+      if (event.data.message !== 'deliverCredentials') return
 
       const data = event.data as DiscordUser
 
@@ -86,6 +84,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
           Cookies.set('expiry', expiry.toString())
           setCurrentUser(user)
           if (!data.username) {
+            router.refresh()
             router.push('/auth/init')
           }
         }

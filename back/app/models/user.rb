@@ -11,6 +11,7 @@ class User < ActiveRecord::Base
   has_one :profile, dependent: :destroy # ProfileはUserに依存し、Userが削除されたらProfileも削除される
 
   validates :username, uniqueness: { message: '%<value>s has already been taken' },
+                       allow_blank: true,
                        length: { maximum: 16 }
   validates :nickname, length: { maximum: 16 }
 end
