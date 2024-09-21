@@ -4,10 +4,10 @@ services:
     environment:
       POSTGRES_USER: ${POSTGRES_USER}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
-      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_DB: ${POSTGRES_DB_DEV}
     volumes:
       - type: volume
-        source: db_data
+        source: db_data_dev
         target: /var/lib/postgresql/data
     ports:
       - '5432:5432'
@@ -23,7 +23,7 @@ services:
         source: ./back
         target: /app
       - type: volume
-        source: gem_data
+        source: gem_data_dev
         target: /usr/local/bundle
     ports:
       - '3000:3000'
@@ -51,7 +51,7 @@ services:
         source: ./front/node_modules
         target: /app/node_modules
     ports:
-      - '3001:3000'
+      - '3001:3001'
     depends_on:
       - back
     environment:
@@ -72,7 +72,7 @@ services:
         source: ./back
         target: /app
       - type: volume
-        source: gem_data
+        source: gem_data_dev
         target: /usr/local/bundle
     depends_on:
       - db
@@ -92,7 +92,7 @@ services:
       - '6379:6379'
     volumes:
       - type: volume
-        source: redis_data
+        source: redis_data_dev
         target: /data
     stop_grace_period: "3s"
     restart: always
@@ -103,7 +103,7 @@ services:
       - '80:80'
     volumes:
       - type: bind
-        source: ./nginx.conf
+        source: ./nginx.dev.conf
         target: /etc/nginx/nginx.conf
       - type: bind
         source: ./certs
@@ -115,6 +115,6 @@ services:
     restart: always
 
 volumes:
-  db_data:
-  gem_data:
-  redis_data:
+  db_data_dev:
+  gem_data_dev:
+  redis_data_dev:
