@@ -20,4 +20,5 @@ export default withBundleAnalyzer({
     BASE_URL_PRO: 'https://ecomeru.com',
     BASE_URL_DEV: 'http://localhost:3000',
   },
+  output: 'standalone',
 })

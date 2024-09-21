@@ -2,7 +2,7 @@
 FROM node:20-alpine
 
 # Set the working directory.
-WORKDIR /rails
+WORKDIR /app
 
 # Copy the package.json and pnpm-lock.yaml files.
 COPY package.json pnpm-lock.yaml ./

@@ -92,7 +92,7 @@ services:
       - '6379:6379'
     volumes:
       - type: volume
-        source: redit_data
+        source: redis_data
         target: /data
     stop_grace_period: "3s"
     restart: always
@@ -117,4 +117,4 @@ services:
 volumes:
   db_data:
   gem_data:
-  redit_data:
+  redis_data:
