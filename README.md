@@ -2,7 +2,7 @@
 ecomeru は、膨大なECサイトのレビューをAI技術を用いて要約し、ユーザーが商品購入の意思決定を迅速かつ効率的に行えるようにサポートするサービスです。
 ecomeruは「Ecommerce」と「まとめる」を組み合わせた造語です。
 
-##トップページ
+## トップページ
 ![home](https://github.com/user-attachments/assets/9bfd8a31-431d-4b39-89f1-5f8fae3eea90)
 
 ## ER図
