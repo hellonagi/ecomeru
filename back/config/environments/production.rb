@@ -45,7 +45,7 @@ Rails.application.configure do
   config.force_ssl = true
   config.ssl_options = {
     redirect: {
-      exclude: ->(request) { !request.path.start_with?('/api/v1/auth', '/omniauth') }
+      exclude: ->(request) { !request.path.start_with?('/api/v1/auth/discord', '/omniauth') }
     }
   }
 
