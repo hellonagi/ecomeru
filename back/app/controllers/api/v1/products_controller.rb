@@ -1,6 +1,6 @@
 class Api::V1::ProductsController < ApplicationController
   def show
-    @product = Product.includes(%i[shops genres]).find_by(slug: params[:id])
+    @product = Product.includes(%i[shops genres]).find_by(slug: params[:slug])
     if @product
       @analysis = Analysis.find_by(product_id: @product.id)
       AnalyzeReviewsJob.perform_async(@product.review_slug, @product.id) unless @analysis

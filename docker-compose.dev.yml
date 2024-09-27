@@ -7,7 +7,7 @@ services:
       POSTGRES_DB: ${POSTGRES_DB_DEV}
     volumes:
       - type: volume
-        source: db_data_dev
+        source: qsql_data_dev
         target: /var/lib/postgresql/data
     ports:
       - '5432:5432'
@@ -33,6 +33,7 @@ services:
     env_file:
       - .env
     environment:
+      RAILS_ENV: development
       RAILS_MASTER_KEY: ${RAILS_MASTER_KEY}
     stdin_open: true
     tty: true
@@ -115,6 +116,6 @@ services:
     restart: always
 
 volumes:
-  db_data_dev:
+  qsql_data_dev:
   gem_data_dev:
   redis_data_dev:

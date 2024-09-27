@@ -9,6 +9,8 @@ class User < ActiveRecord::Base
   include DeviseTokenAuth::Concerns::User
 
   has_one :profile, dependent: :destroy # ProfileはUserに依存し、Userが削除されたらProfileも削除される
+  has_many :reviews
+  has_many :products, through: :reviews
 
   validates :username, uniqueness: { message: '%<value>s has already been taken' },
                        allow_blank: true,

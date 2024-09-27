@@ -15,6 +15,8 @@ class Product < ApplicationRecord
   has_one :analysis
   has_many :product_genres
   has_many :genres, through: :product_genres
+  has_many :reviews
+  has_many :users, through: :reviews
 
   def level_in_product_genres
     product_genres.map do |pg|

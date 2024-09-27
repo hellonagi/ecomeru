@@ -11,7 +11,10 @@ Rails.application.routes.draw do
 
       get '/products/recent', to: 'products#recent', as: 'recent'
       get '/products/positive', to: 'products#positive', as: 'positive'
-      resources :products, only: %i[show create]
+      resources :products, param: :slug, only: %i[show create] do
+        resources :reviews, only: %i[index]
+        resource :review, only: %i[create update destroy]
+      end
     end
   end
 end
