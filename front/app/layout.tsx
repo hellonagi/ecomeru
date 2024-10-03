@@ -1,6 +1,7 @@
 import '@mantine/core/styles.css'
 import '@mantine/notifications/styles.css'
 import '@mantine/carousel/styles.css'
+import '@mantine/dates/styles.css'
 import './global.css'
 import React from 'react'
 import { MantineProvider, ColorSchemeScript, Flex } from '@mantine/core'
@@ -9,6 +10,8 @@ import { AuthProvider } from '@/features/auth/AuthContext'
 import { theme } from '../theme'
 import Header from '@/components/header/Header'
 import { Footer } from '@/components/footer/Footer'
+import 'dayjs/locale/ja'
+import { DatesProvider } from '@mantine/dates'
 
 export const metadata = {
   title: 'ecomeru',
@@ -29,12 +32,14 @@ export default function RootLayout({ children }: { children: any }) {
       </head>
       <body>
         <MantineProvider theme={theme}>
-          <AuthProvider>
-            <Header />
-            {children}
-            <Footer />
-          </AuthProvider>
-          <Notifications />
+          <DatesProvider settings={{ locale: 'ja' }}>
+            <AuthProvider>
+              <Header />
+              {children}
+              <Footer />
+            </AuthProvider>
+            <Notifications />
+          </DatesProvider>
         </MantineProvider>
       </body>
     </html>

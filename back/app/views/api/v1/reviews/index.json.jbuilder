@@ -6,6 +6,8 @@ json.array!(@reviews) do |review|
   json.user do
     json.id review.user.id
     json.username review.user.username
+    json.nickname review.user.nickname
+    json.image review.user.image
   end
   json.created_at review.created_at
   json.updated_at review.updated_at

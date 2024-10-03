@@ -1,30 +1,19 @@
 'use server'
-import { z } from 'zod'
-import { schema } from '../profileSchema'
 import getAuthCookies from '@/lib/getAuthCookies'
 
-export async function postProfile(
-  prevState: {
-    success: boolean
-    message: string
-    data?: z.infer<typeof schema>
-    errors?: { username: string }
-  },
-  payload: z.infer<typeof schema>,
-) {
+export async function deleteReview(product_slug: string) {
   const { token, client, uid } = getAuthCookies()
   try {
     const response = await fetch(
-      `${process.env.RAILS_API_URL}/api/v1/profile`,
+      `${process.env.RAILS_API_URL}/api/v1/products/${product_slug}/review`,
       {
-        method: 'PATCH',
+        method: 'DELETE',
         headers: {
           'Content-Type': 'application/json',
           'access-token': token,
           client,
           uid,
         },
-        body: JSON.stringify({ profile: payload }),
       },
     )
 

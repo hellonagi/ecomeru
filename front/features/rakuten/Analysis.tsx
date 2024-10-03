@@ -70,7 +70,7 @@ export function Analysis({ analysis }: any) {
   ))
 
   return (
-    <Paper withBorder p="md" radius="md" mt={24}>
+    <Paper withBorder p="md" radius="md" mt={24} mb={24}>
       <Group justify="space-between">
         <Group align="flex-end" gap="xs">
           <Title order={2} size="h3">

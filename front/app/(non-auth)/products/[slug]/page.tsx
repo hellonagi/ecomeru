@@ -4,9 +4,12 @@ import { validateURL } from '@/features/rakuten/actions/validate-url'
 import { createProduct } from '@/features/rakuten/actions/create-product'
 import { Product } from '@/features/rakuten/Product'
 import { Analysis } from '@/features/rakuten/Analysis'
+import { Reviews } from '@/features/rakuten/Reviews'
+import ReviewForm from '@/features/rakuten/ReviewForm'
 import { LoadingProduct } from '@/features/rakuten/LoadingProduct'
 import { LoadingAnalysis } from '@/features/rakuten/LoadingAnalysis'
 import { NoAnalysis } from '@/features/rakuten/NoAnalysis'
+import { fetchReviews } from '@/features/rakuten/actions/fetch-reviews'
 
 export default async function Page({ params }: { params: { slug: string } }) {
   const slug = params.slug
@@ -24,6 +27,8 @@ export default async function Page({ params }: { params: { slug: string } }) {
     }
   }
 
+  const reviews = await fetchReviews(slug)
+
   const shop = product.shops[0]
   const review_url = `https://review.rakuten.co.jp/item/1/${product.review_slug}/`
   const analysisComponent = await getAnalysisComponent(product)
@@ -32,6 +37,8 @@ export default async function Page({ params }: { params: { slug: string } }) {
     <>
       <Product product={product} shop={shop} review_url={review_url} />
       {analysisComponent}
+      <Reviews reviews={reviews} product_slug={product.slug} />
+      <ReviewForm reviews={reviews} product_slug={product.slug} />
     </>
   )
 }
