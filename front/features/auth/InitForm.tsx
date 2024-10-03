@@ -50,6 +50,7 @@ export default function InitForm({
       notifications.show({
         message: state.message,
       })
+      window.location.reload()
     }
   }, [state])
 

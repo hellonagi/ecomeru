@@ -2,7 +2,6 @@
 import { z } from 'zod'
 import { schema } from '@/schemas/initSchema'
 import getAuthCookies from '@/lib/getAuthCookies'
-import { permanentRedirect } from 'next/navigation'
 
 export async function initUsername(
   prevState: {
@@ -29,10 +28,17 @@ export async function initUsername(
         },
         body: JSON.stringify({ user: parsed.data }),
       })
-      const data = await response.json()
 
-      if (!data.success) {
-        return data
+      if (response.ok) {
+        return {
+          success: true,
+          message: '登録が完了しました。',
+        }
+      } else {
+        return {
+          success: false,
+          message: 'Something went wrong. Please try again later.',
+        }
       }
     } catch (error) {
       // Server Errors, Active Record Errors, etc.
@@ -41,8 +47,6 @@ export async function initUsername(
         message: 'Something went wrong. Please try again later.',
       }
     }
-
-    permanentRedirect(`/users/${parsed.data.username}`)
   } else {
     return { success: false, message: 'Validation failed' }
   }
